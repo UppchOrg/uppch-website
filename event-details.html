@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPPCH</title>
+    <!-- Preconnect for better font loading performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts: Poppins & Roboto with full weight ranges -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Your Styles & Scripts -->
+    <link rel="stylesheet" href="/css/events-1-style.css" />
+
+    <script src="js/events-1-main.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="nav-container">
+        <div class="nav-inner">
+          <div class="logo-group">
+            <img src="assets/logo.png" alt="Logo" class="logo" />
+            <h1>Uppch</h1>
+          </div>
+
+          <nav class="nav-links desktop-nav">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Our Mission</a>
+            <a href="#">Latest Events</a>
+            <a href="#">Upcoming Events</a>
+            <a href="#">Contact</a>
+          </nav>
+
+          <div class="donate-group desktop-donate">
+            <a href="#" class="donate-btn">Donate</a>
+          </div>
+
+          <!-- Hamburger -->
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+          <div class="logo-group">
+            <img src="assets/logo.png" alt="Logo" class="logo" />
+            <h1>Uppch</h1>
+          </div>
+          <button class="close-btn" id="closeBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Our Mission</a>
+          <a href="#">Latest Events</a>
+          <a href="#">Upcoming Events</a>
+          <a href="#">Contact</a>
+          <a href="#" class="donate-btn mobile-donate">Donate</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>A day of remembrance</h2>
+        <div class="btn-group">
+          <a href="#blog-start" class="btn lime">Read More</a>
+          <a href="#" class="btn outline">Watch Video</a>
+        </div>
+        <div class="video-placeholder">
+          <div class="play-button">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blog-start" id="blog-start">
+      <div class="container">
+        <h1>
+          United People Promoting Community Hope – Empowering Lives Through
+          Compassion, Action, and Unity
+        </h1>
+        <div class="card-row">
+          <!-- Left Side -->
+          <div class="left-text card">
+            <p class="intro">
+              At UPPCH, we believe that compassion and community support are the
+              foundations of lasting change. Our mission is to uplift and
+              empower those in need through direct outreach and sustainable
+              programs.
+            </p>
+            <p class="more-text hidden">
+              With the help of our donors and volunteers, we strive to create
+              opportunities, restore hope, and bring dignity to every life we
+              touch.
+            </p>
+            <button class="read-more-btn" id="readMoreBtn">Read More</button>
+          </div>
+
+          <!-- Right Side -->
+          <div class="right-text card">
+            <img
+              src="/assets/images/event-dance.jpeg"
+              alt="UPPCH Community"
+              class="blog-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

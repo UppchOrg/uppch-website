@@ -22,6 +22,7 @@
 
     <!-- Your Styles & Scripts -->
     <link rel="stylesheet" href="css/style.css" />
+
     <script src="js/main.js"></script>
   </head>
   <body>
@@ -129,7 +130,7 @@
         <div class="container">
           <h1>WE AIM TO HELP THE MANY IN NEED</h1>
           <p>
-            The Less Fortunate Need Us <br />
+            The Less Fortunate Need Help <br />
             Now In <span>Haiti</span>
           </p>
           <h2>
@@ -137,8 +138,8 @@
             continue the jouney will end
           </h2>
           <div class="btn-group">
-            <button>View More</button>
-            <button>Donate Now</button>
+            <a href="#about" class="btn btn-primary">View More</a>
+            <a href="#donate" class="btn btn-secondary">Donate Now</a>
           </div>
         </div>
         <div class="hero-right-arrow">
@@ -191,7 +192,7 @@
                 preload="metadata"
                 poster="black.jpg"
               >
-                <source src="your-video.mp4" type="video/mp4" />
+                <source src="/assets/videos/event.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div class="custom-play-button" id="playButton"></div>
@@ -204,9 +205,15 @@
 
       <section id="picture-frame" class="picture-frame-section">
         <div class="container picture-frame-container">
-          <div class="frame-box"></div>
-          <div class="frame-box"></div>
-          <div class="frame-box"></div>
+          <div class="frame-box">
+            <img src="/assets/images/photo-bike.jpeg" alt="Description" />
+          </div>
+          <div class="frame-box">
+            <img src="/assets/images/group-Photo.jpeg" alt="Description" />
+          </div>
+          <div class="frame-box">
+            <img src="/assets/images/group-Photo-Side.jpeg" alt="Description" />
+          </div>
         </div>
       </section>
 
@@ -220,6 +227,14 @@
               Every person deserves to live with dignity, hope, and opportunity
               — UPPCH is here to make that a reality for the people of Haiti.
             </p>
+            <p>
+              We're excited to offer volunteer opportunities at UPPCH in the
+              near future. While our volunteer program isn't live just yet,
+              we're working hard behind the scenes to create meaningful ways for
+              compassionate individuals like you to get involved. Stay
+              tuned—your chance to make a difference is coming soon!
+            </p>
+
             <button class="mission-read-btn">Read More</button>
           </div>
 
@@ -263,14 +278,19 @@
 
             <div class="event-cards">
               <div class="event-card">
-                <div class="image-placeholder"></div>
+                <div class="image-placeholder">
+                  <img
+                    src="/assets/images/group-Photo.jpeg"
+                    alt="Description"
+                  />
+                </div>
                 <div class="event-info">
-                  <small>By Nicolas Cherubin • Sep 7, 2012</small>
+                  <small>By Nicolas Cherubin • July 7, 2025</small>
                   <h3>Event Title Here</h3>
                   <p>
                     Short description of the event goes here, just a few lines.
                   </p>
-                  <a href="#">Read More →</a>
+                  <a href="event-details.html">Read More →</a>
                 </div>
               </div>
 

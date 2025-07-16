@@ -19,6 +19,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Read More
+  document
+    .querySelector(".about-read-btn")
+    .addEventListener("click", function () {
+      const para = document.querySelector(".about-card-left p:nth-child(4)");
+      para.style.display = para.style.display === "block" ? "none" : "block";
+    });
+
+  // Read More
+  document
+    .querySelector(".mission-read-btn")
+    .addEventListener("click", function () {
+      const hiddenPara = document.querySelector(
+        ".mission-card-left p:nth-of-type(2)"
+      );
+      hiddenPara.style.display =
+        hiddenPara.style.display === "block" ? "none" : "block";
+    });
+
   // ======= About Video Custom Play Button =======
   const playButton = document.getElementById("playButton");
   const video = document.getElementById("aboutVideo");

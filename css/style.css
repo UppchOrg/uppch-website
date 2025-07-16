@@ -30,7 +30,6 @@ body {
   top: 0;
   left: 0;
   z-index: 999;
-
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional */
 }
 
@@ -292,15 +291,37 @@ main {
   gap: 1rem; /* Add spacing between buttons */
 }
 
-.btn-group button {
+.btn-group a {
+  display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
-  border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+/* First button (orange) */
+.btn-group a.btn-primary {
+  background-color: var(--orange);
+  color: white;
+}
+
+.btn-group a.btn-primary:hover {
+  background-color: var(--orangeDarker);
+}
+
+/* Second button (white) */
+.btn-group a.btn-secondary {
+  background-color: white;
+  color: black;
+}
+
+.btn-group a.btn-secondary:hover {
+  background-color: #000000;
+  color: white;
 }
 
 /* Left (orange) button */
@@ -396,6 +417,10 @@ section .container {
 /* ========================== */
 /*      Layout Container      */
 /* ========================== */
+#about.about-section {
+  scroll-margin-top: 120px;
+}
+
 #about.about-section .about-card-container {
   display: flex;
   flex-wrap: wrap;
@@ -454,6 +479,11 @@ section .container {
   line-height: 1.8;
   color: rgb(85, 85, 85);
 }
+
+.about-card-left p:nth-child(4) {
+  display: none;
+}
+
 .about-read-btn {
   background-color: var(--orange);
   color: white;
@@ -488,6 +518,10 @@ section .container {
   height: 100%;
   object-fit: cover;
   background-color: #000 !important;
+  background-image: url(/assets/images/event-vid-img.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ========================== */
@@ -607,6 +641,8 @@ section .container {
   height: 100%;
   object-fit: cover;
   display: block;
+  user-select: none;
+  pointer-events: none;
 }
 
 /* Responsive: stack vertically on mobile */
@@ -643,6 +679,9 @@ section .container {
 /*==============================*/
 /*------- Mission Section ----- */
 /*=========== Start ===========*/
+.mission-section {
+  scroll-margin-top: 120px;
+}
 
 .mission-section {
   background-color: #fff;
@@ -682,6 +721,9 @@ section .container {
   color: #333;
   margin-bottom: 1.5rem;
   line-height: 1.6;
+}
+.mission-card-left p:nth-of-type(2) {
+  display: none;
 }
 
 .mission-read-btn {
@@ -816,6 +858,7 @@ section .container {
 
 .latest-events-section {
   background-color: #f7f7f7;
+  scroll-margin-top: 150px;
 }
 
 .latest-events-section {
@@ -882,6 +925,16 @@ section .container {
 .image-placeholder {
   background-color: #ccc;
   height: 160px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .event-info {
@@ -972,6 +1025,7 @@ section .container {
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
+  scroll-margin-top: 130px;
 }
 
 .contact-card {
@@ -1073,10 +1127,6 @@ section .container {
   .contact-right {
     padding: 1.5rem;
   }
-
-  .social-icons {
-    justify-content: center;
-  }
 }
 
 /*========== Completed =========*/
@@ -1118,7 +1168,7 @@ section .container {
   background-color: #f3f3f3;
   border-radius: 12px;
   width: 100%;
-  padding: 2rem;
+  padding: 3rem 2rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
   text-align: center;
@@ -1484,5 +1534,47 @@ section .container {
   .btn-group {
     display: flex;
     justify-content: center;
+  }
+}
+@media (max-width: 1200px) {
+  .hero-section {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
+  .hero-section .container {
+    max-width: 900px;
+    padding: 0 1.5rem;
+    text-align: left;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .hero-section p {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: left;
+    word-break: break-word;
+  }
+
+  .hero-section h2 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .btn-group {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
