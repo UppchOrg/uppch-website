@@ -518,7 +518,7 @@ section .container {
   height: 100%;
   object-fit: cover;
   background-color: #000 !important;
-  background-image: url(assets/images/event-vid-img.png);
+  background-image: url("/assets/images/event-vid-img.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
