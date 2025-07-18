@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UPPCH</title>
-    <!-- Preconnect for better font loading performance -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Google Fonts: Poppins & Roboto with full weight ranges -->
+    <!-- Google Fonts: Poppins & Roboto -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -20,11 +20,22 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <!-- Your Styles & Scripts -->
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- My Stylsheey -->
     <link rel="stylesheet" href="css/events-1-style.css" />
 
+    <!-- Swiper JS FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- JS for the page -->
     <script src="js/events-1-main.js"></script>
   </head>
+
   <body>
     <!-- Header -->
     <header class="header">
@@ -36,12 +47,12 @@
           </div>
 
           <nav class="nav-links desktop-nav">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Our Mission</a>
-            <a href="#">Latest Events</a>
-            <a href="#">Upcoming Events</a>
-            <a href="#">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#mission">Our Mission</a>
+            <a href="index.html#latest-events">Latest Events</a>
+            <a href="index.html#upcoming-events">Upcoming Events</a>
+            <a href="index.html#contact">Contact</a>
           </nav>
 
           <div class="donate-group desktop-donate">
@@ -84,21 +95,32 @@
         <h2>A day of remembrance</h2>
         <div class="btn-group">
           <a href="#blog-start" class="btn lime">Read More</a>
-          <a href="#" class="btn outline">Watch Video</a>
+          <a href="#" class="btn outline watchVid">Watch Video</a>
         </div>
         <div class="video-placeholder">
-          <div class="play-button">
+          <img
+            src="assets/images/event-vid-img.png"
+            alt="Event Preview"
+            class="video-thumbnail"
+          />
+
+          <video
+            src="assets/videos/event.mp4"
+            class="event-video"
+            controls
+          ></video>
+          <div class="play-button" id="playButton">
             <i class="fas fa-play"></i>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Blog start section -->
+
     <section class="blog-start" id="blog-start">
       <div class="container">
-        <h1>
-          United People Promoting Community Hope – Empowering Lives Through
-          Compassion, Action, and Unity
-        </h1>
+        <h1>A Small view of the U.p.p.c.h. Team</h1>
         <div class="card-row">
           <!-- Left Side -->
           <div class="left-text card">
@@ -119,7 +141,7 @@
           <!-- Right Side -->
           <div class="right-text card">
             <img
-              src="assets/images/event-dance.jpeg"
+              src="assets/images/group-Photo.jpeg"
               alt="UPPCH Community"
               class="blog-image"
             />
@@ -127,5 +149,128 @@
         </div>
       </div>
     </section>
+    <section class="blog-swiper" id="blog-swiper">
+      <div class="container">
+        <h1>INSIGHT INTO THE EVENT</h1>
+        <h2>
+          United People Promoting Community Hope – Empowering Lives Through
+          Compassion, Action, and Unity
+        </h2>
+        <div class="swiper blogSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="assets/images/event-dance-zoomed-2.jpeg"
+                alt="Event Dance Zoomed 2"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/back.jpeg" alt="Back" />
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                src="assets/images/event-vid-img.png"
+                alt="Event Video Image"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="assets/images/event-dance-zoomed.jpeg"
+                alt="Event Dance Zoomed"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="assets/images/group-Photo-Side.jpeg"
+                alt="Group Photo Side"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/group-Photo.jpeg" alt="Group Photo" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/event-dance.jpeg" alt="Event Dance" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/photo-bike.jpeg" alt="Photo Bike" />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="assets/images/speaking-woman.jpeg"
+                alt="Speaking Woman"
+              />
+            </div>
+          </div>
+
+          <!-- Navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="site-footer-container">
+        <!-- Column 1: Logo & Description -->
+        <div class="footer-column column1">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="UPPCH Logo" />
+          </div>
+          <p class="footer-description">
+            UPPCH is dedicated to uplifting Haiti through education,
+            empowerment, and community support. Together, we build a brighter
+            future.
+          </p>
+          <p class="footer-copyright">
+            &copy; 2025 UPPCH. All rights reserved.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-column column2">
+          <h2>Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#mission">Our Mission</a></li>
+            <li><a href="index.html#latest-events">Latest Events</a></li>
+            <li><a href="index.html#events">Upcoming Events</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Other Pages (Leave room for expansion) -->
+        <div class="footer-column column3">
+          <h2>Other Pages</h2>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Volunteer</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info -->
+        <div class="footer-column column4">
+          <h2>Contact Us</h2>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>65 Country Club Rd, New Jersey</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-square-phone"></i>
+            <a href="tel:7323375065">732-337-5065</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:UppchOrg@gmail.com">UppchOrg@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/blog-swiper.js"></script>
   </body>
 </html>

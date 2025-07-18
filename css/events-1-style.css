@@ -11,7 +11,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: #fff;
@@ -31,7 +33,7 @@ body {
   left: 0;
   width: 100%;
   background-color: var(--greenBack);
-  z-index: 999;
+  z-index: 9999;
 }
 
 .nav-container {
@@ -118,7 +120,7 @@ body {
 
 .hero {
   background-color: var(--greenBack);
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
   position: relative;
@@ -183,7 +185,10 @@ body {
   background-color: #dcdcdc;
   margin: 0 auto;
   border-radius: 12px;
-  position: absolute;
+  position: relative; /* Needed for absolute children */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -191,11 +196,23 @@ body {
   bottom: -50px;
 }
 
-.video-placeholder {
-  overflow: visible;
+.video-thumbnail,
+.event-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
 }
 
+.event-video {
+  display: none; /* hidden by default */
+}
 .play-button {
+  position: absolute; /* Now relative to .video-placeholder */
+  bottom: -100px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100px;
   height: 100px;
   background-color: var(--limeGreen);
@@ -207,17 +224,15 @@ body {
   font-size: 40px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  position: absolute;
-  left: 50%;
-  bottom: -50px;
-  transform: translateX(-50%);
+  z-index: 2;
 }
+
 .fas {
   transform: translateX(4px);
 }
 
 .play-button:hover {
-  transform: translateX(-50%) scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Responsive */
@@ -243,7 +258,13 @@ body {
   .header {
     padding: 9px;
   }
+  .play-button {
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+  }
 }
+
 /* ============================= */
 /*              Hero             */
 /*             Section           */
@@ -419,12 +440,12 @@ body {
 
 .blog-start {
   width: 100%;
-  padding: 4rem 1rem;
-  background-color: #f0f0f0;
+  padding: 2rem 1rem;
+  background-color: #fef7f7;
   display: flex;
   justify-content: center;
   min-height: 300px;
-  padding-top: 150px;
+  padding-top: 180px;
 }
 
 .blog-start .container {
@@ -439,8 +460,9 @@ body {
 .blog-start .container h1 {
   text-align: center;
   color: black;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 .blog-start .container p:nth-child(2) {
   padding-top: 25px;
@@ -510,7 +532,7 @@ body {
 /* Stack on smaller screens */
 @media (max-width: 768px) {
   .blog-start {
-    padding-top: 0;
+    padding-top: 150px;
   }
 
   .blog-start .card {
@@ -555,3 +577,203 @@ body {
 /*             Section          */
 /*               End            */
 /* =============================*/
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+/* =============================*/
+/*           Blog Swiper         */
+/*             Section          */
+/*              Start           */
+/* =============================*/
+
+.blog-swiper {
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.blog-swiper .container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+.blog-swiper .container h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  padding-bottom: 20px;
+}
+
+.blog-swiper .container h2 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  font-size: 2rem;
+  padding: 20px 0;
+}
+/* Swiper specific */
+.swiper {
+  width: 100%;
+  height: 300px;
+}
+
+.swiper-slide {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/*==============================*/
+/*---------- Footer ------------*/
+/*==============================*/
+
+.site-footer {
+  background-color: #111;
+  color: #eee;
+  padding: 4rem 1rem;
+  font-size: 0.95rem;
+}
+
+.site-footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.footer-column h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--orange);
+}
+
+.footer-logo img {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  color: #ccc;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #eee;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--orange);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: #ccc;
+}
+
+.contact-item a {
+  color: #eee;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: var(--orange);
+}
+
+.footer-column a i {
+  margin-right: 0.5rem;
+}
+
+/*==============================*/
+/*--------- Responsive ---------*/
+/*==============================*/
+
+@media (max-width: 600px) {
+  .site-footer {
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  .footer-logo img {
+    margin: 0 auto;
+  }
+}
+
+/*========== Completed =========*/
+/*       Footer Section ----- */
+/*==============================*/
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/* ------------------------------------------------ */

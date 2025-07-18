@@ -26,4 +26,30 @@ document.addEventListener("DOMContentLoaded", function () {
       readMoreBtn.textContent = "Read More";
     }
   });
+
+  // Video Play Button + Watch Video Button
+  const playButton = document.getElementById("playButton");
+  const watchVidBtn = document.querySelector(".watchVid");
+  const thumbnail = document.querySelector(".video-thumbnail");
+  const video = document.querySelector(".event-video");
+
+  function playVideo() {
+    if (playButton && thumbnail && video) {
+      playButton.style.opacity = "0";
+      thumbnail.style.display = "none";
+      video.style.display = "block";
+      video.play();
+    }
+  }
+
+  if (playButton) {
+    playButton.addEventListener("click", playVideo);
+  }
+
+  if (watchVidBtn) {
+    watchVidBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      playVideo();
+    });
+  }
 });
