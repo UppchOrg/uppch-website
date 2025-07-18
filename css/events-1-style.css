@@ -4,6 +4,7 @@
   --greenBack: #395951;
   --limeGreen: #cfff8b;
   --white: #ffffff;
+  --black: #000000;
 }
 
 * {
@@ -34,67 +35,163 @@ body {
   width: 100%;
   background-color: var(--greenBack);
   z-index: 9999;
+  height: 150px;
 }
-
 .nav-container {
-  display: flex;
-  justify-content: center;
+  margin: auto;
   width: 100%;
+  max-width: 1440px;
+  font-family: "Poppins", sans-serif;
 }
 
-.nav-inner {
-  width: 100%;
-  max-width: 1600px;
+/* Top Navigation Section */
+.nav-inner.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  color: #fff;
+  padding: 12px 0;
+
+  flex-wrap: wrap;
 }
 
-.logo-group {
+.contact-group,
+.social-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-link,
+.social-icon {
+  color: #b4ff8d;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.contact-link i {
+  margin-right: 6px;
+  font-size: 1rem;
+}
+
+.social-icon {
+  background-color: #b4ff8d;
+  color: #000;
+  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon:hover {
+  background-color: #a0ff6a;
+  transform: scale(1.05);
+}
+
+.social-icon i {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Centered Logo */
+.logo-center {
   display: flex;
   align-items: center;
   gap: 10px;
+  text-align: center;
 }
 
 .logo {
-  width: 45px;
-  height: 45px;
+  height: 40px;
+  width: auto;
 }
 
-.logo-group h1 {
-  font-size: 1.3rem;
-  color: var(--white);
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #b4ff8d;
+}
+
+/* Bottom Navigation Section */
+.nav-inner.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fefefe;
+  padding: 15px 5px;
+  border-top: 1px solid #ddd;
+  border-radius: 30px;
+  flex-wrap: wrap;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 20px;
+  padding-left: 15px;
 }
 
 .nav-links a {
-  color: var(--white);
+  color: #333;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: var(--limeGreen);
+  color: #2ecc71;
 }
 
-.donate-group .donate-btn {
-  background-color: var(--limeGreen);
+/* Donate Button */
+.donate-btn {
+  background-color: #b4ff8d;
+  padding: 10px 20px;
+  border-radius: 25px;
   color: #000;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-.donate-group .donate-btn:hover {
-  background-color: #b5f06d;
+.donate-btn:hover {
+  background-color: #a3ff6d;
+}
+
+/* Hamburger (Mobile Only) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-group,
+  .social-group,
+  .nav-links {
+    display: none;
+  }
+
+  .logo-center {
+    margin: 0 auto;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-inner.top,
+  .nav-inner.bottom {
+    padding: 12px 20px;
+  }
 }
 
 /* ============================= */
@@ -125,6 +222,7 @@ body {
   justify-content: center;
   position: relative;
   height: 750px;
+  padding-top: 100px;
 }
 
 .hero-inner {
