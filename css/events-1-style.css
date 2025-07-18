@@ -133,7 +133,7 @@ body {
 .nav-links {
   display: flex;
   gap: 20px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .nav-links a {
@@ -156,6 +156,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s;
+  margin-left: -10px;
 }
 
 .donate-btn:hover {
@@ -388,7 +389,7 @@ body {
   background: none;
   border: none;
   font-size: 1.8rem;
-  color: white;
+  color: var(--black);
   cursor: pointer;
 }
 
@@ -423,7 +424,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 1.5rem;
-  transform: translateY(30%);
+  transform: translateY(15%);
 }
 
 .mobile-nav-links a {
@@ -476,6 +477,7 @@ body {
 
   .logo-group h1 {
     font-size: 1.2rem;
+    color: white;
   }
 
   .btn-group {
