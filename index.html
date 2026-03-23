@@ -1,116 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ht">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UPPCH</title>
-    <!-- Preconnect for better font loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Google Fonts: Poppins & Roboto with full weight ranges -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
-    <!-- Your Styles & Scripts -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- Load translations BEFORE main.js so the object is available on DOMContentLoaded -->
+    <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
     <header class="header">
+
+      <!-- Top Nav -->
       <div class="top-nav">
         <div class="container">
           <div class="left-text">
             <i class="fa-solid fa-location-dot"></i>
-            <span>65 Country Club Rd, New Jersey</span>
+            <span data-i18n="nav_address">65 Country Club Rd, New Jersey</span>
           </div>
           <div class="right-text">
-            <a href="tel:7323375065">
-              <i class="fa-solid fa-square-phone"></i> 732-337-5065
-            </a>
+            <a href="tel:7323375065"><i class="fa-solid fa-square-phone"></i> 732-337-5065</a>
             <a href="mailto:UppchOrg@gmail.com" title="Email Us">
               <i class="fa-solid fa-envelope"></i> UppchOrg@gmail.com
             </a>
-
-            <a
-              href="https://www.facebook.com/UppchOrg"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit us on Facebook"
-            >
+            <a href="https://www.facebook.com/UppchOrg" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-square-facebook"></i>
             </a>
-
-            <a
-              href="https://www.instagram.com/UppchOrg"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit us on Instagram"
-            >
+            <a href="https://www.instagram.com/UppchOrg" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-square-instagram"></i>
             </a>
-
-            <a
-              href="https://www.tiktok.com/@UppchOrg"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit us on TikTok"
-            >
+            <a href="https://www.tiktok.com/@UppchOrg" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-tiktok"></i>
             </a>
-
-            <a
-              href="https://x.com/UppchOrg"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit us on X (formerly Twitter)"
-            >
+            <a href="https://x.com/UppchOrg" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-
-            <a
-              href="https://youtube.com/@UppchOrg"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Visit us on YouTube"
-            >
+            <a href="https://youtube.com/@UppchOrg" target="_blank" rel="noopener noreferrer">
               <i class="fa-brands fa-youtube"></i>
             </a>
           </div>
         </div>
       </div>
+
+      <!-- Bottom Nav -->
       <div class="bottom-nav">
         <div class="container">
           <div class="left-text">
-            <img
-              src="assets/logo.png"
-              alt="Little Hearts Charity Logo"
-              class="logo"
-            />
+            <img src="assets/logo.png" alt="UPPCH Logo" class="logo" />
             <div class="logo-text">
               <h1>UPPCH</h1>
-              <p>Union Patriotique Pour le Progres et le Changement d’Haiti</p>
+              <p>Union Patriotique Pour le Progres et le Changement d'Haiti</p>
             </div>
           </div>
           <div class="right-text">
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#mission">Our Mission</a></li>
-              <li><a href="#latest-events">Latest Events</a></li>
-              <li><a href="#events-tl">Events Timeline</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#donate" class="donateBtn">Donate</a></li>
+              <li><a href="#home"     data-i18n="nav_home">Akèy</a></li>
+              <li><a href="#about"    data-i18n="nav_about">Ki Nou Ye</a></li>
+              <li><a href="#mission"  data-i18n="nav_mission">Misyon Nou</a></li>
+              <li><a href="#latest-events" data-i18n="nav_events">Dènye Evènman</a></li>
+              <li><a href="#events-tl" data-i18n="nav_timeline">Istwa Evènman</a></li>
+              <li><a href="#contact"  data-i18n="nav_contact">Kontakte Nou</a></li>
             </ul>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+              <button class="lang-btn active" data-lang="ht" aria-label="Kreyòl Ayisyen">🇭🇹 Kreyòl</button>
+              <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+              <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+            </div>
           </div>
           <div class="menu-btn">
             <i class="fa-solid fa-bars open-icon"></i>
@@ -118,245 +87,180 @@
           </div>
         </div>
       </div>
+
     </header>
 
     <main>
+
+      <!-- Hero Section -->
       <section id="home" class="hero-section">
         <div class="hero-left-arrow">
-          <a href="">
-            <i class="fa-solid fa-chevron-left"></i>
-          </a>
+          <a href=""><i class="fa-solid fa-chevron-left"></i></a>
         </div>
         <div class="container">
-          <h1>WE AIM TO HELP THE MANY IN NEED</h1>
+          <h1 data-i18n="hero_h1">INITE KOMINOTE AYISYEN AN POU YON CHANJMAN REYÈL</h1>
           <p>
-            The Less Fortunate Need Help <br />
-            Now In <span>Haiti</span>
+            <span data-i18n="hero_p1">Pèp Ayiti a</span><br />
+            <span data-i18n="hero_p2">Merite yon</span> <span class="hero-highlight" data-i18n="hero_span">Pi Bon Avni</span>
           </p>
-          <h2>
-            Any Help Welcomed! Even if taking little steps as long as you
-            continue the jouney will end
+          <h2 data-i18n="hero_h2">
+            Ansanm nou òganize, defann, e n'aji — paske yon chanjman dirab kòmanse ak yon kominote ki enfòme e ini.
           </h2>
           <div class="btn-group">
-            <a href="#about" class="btn btn-primary">View More</a>
-            <a href="#donate" class="btn btn-secondary">Donate Now</a>
+            <a href="#about" class="btn btn-primary" data-i18n="hero_btn">Aprann Plis</a>
           </div>
         </div>
         <div class="hero-right-arrow">
-          <a href="">
-            <i class="fa-solid fa-chevron-right"></i>
-          </a>
+          <a href=""><i class="fa-solid fa-chevron-right"></i></a>
         </div>
       </section>
 
-      <!-- About Uppch Section -->
+      <!-- About Section -->
       <section id="about" class="about-section">
         <div class="container about-card-container">
-          <!-- Left Card -->
+
           <div class="about-card-left">
-            <h2>ABOUT UPPCH</h2>
-            <p>
-              <strong
-                >Every person deserves to live with dignity, hope, and
-                opportunity — UPPCH is here to make that a reality for the
-                people of Haiti.</strong
-              >
-            </p>
-            <p>
-              UPPCH is a nonprofit organization dedicated to helping the most
-              vulnerable communities in Haiti. Through education, health
-              services, and food assistance, we aim to uplift lives and bring
-              lasting change.
-            </p>
-            <p>
-              Our mission is rooted in compassion and action. Whether it’s
-              school supplies, medical aid, or basic resources, UPPCH works to
-              support families and individuals in need, one step at a time.
-            </p>
-            <button class="about-read-btn">Read More</button>
+            <h2 data-i18n="about_left_h2">KI NOU YE</h2>
+            <p><strong data-i18n="about_left_p1">UPPCH se yon mouvman sivik ki baze sou kwayans ke chak Ayisyen — isit ak nan dyaspora — gen dwa patisipe nan fòme avni peyi yo.</strong></p>
+            <p data-i18n="about_left_p2">Nou se yon òganizasyon sosyal ak politik ki angaje nan defann dwa, diyite, ak pwogrè pèp Ayisyen an. Atravè òganizasyon kominotè, edikasyon sivik, ak aksyon dirèk, nou travay pou rezoud defi sistèm yo ak kominote yo anndan peyi a ak aletranje.</p>
+            <p data-i18n="about_left_p3">Travay nou a baze sou solidarite. Depi defans politik rive nan mobilizasyon popilè, UPPCH mobilize moun pou pouse refòm ak resous ke kominote yo bezwen de toute ijans.</p>
+            <button class="about-read-btn" data-i18n="about_btn">Li Plis</button>
           </div>
 
-          <!-- Right Card -->
           <div class="about-card-right">
-            <h2>PROVIDING AID SINCE 2010</h2>
-            <p>
-              <strong
-                >Every person deserves help sometimes and it's our duty as
-                humans on this planet to provide it.</strong
-              >
-            </p>
+            <h2 data-i18n="about_right_h2">ÒGANIZE DEPI 2010</h2>
+            <p><strong data-i18n="about_right_p">Yon Ayiti pi fò kòmanse ak yon pèp ki òganize, kapab, ak angaje sivikman.</strong></p>
             <div class="custom-video-wrapper">
-              <video
-                id="aboutVideo"
-                width="100%"
-                preload="metadata"
-                poster="black.jpg"
-              >
+              <video id="aboutVideo" width="100%" preload="metadata" poster="black.jpg">
                 <source src="assets/videos/event.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
               </video>
               <div class="custom-play-button" id="playButton"></div>
             </div>
           </div>
+
         </div>
       </section>
 
       <!-- Picture Frame -->
-
       <section id="picture-frame" class="picture-frame-section">
         <div class="container picture-frame-container">
           <div class="frame-box">
-            <img src="assets/images/photo-bike.jpeg" alt="Description" />
+            <img src="assets/images/photo-bike.jpeg" alt="Community outreach" />
           </div>
           <div class="frame-box">
-            <img src="assets/images/group-Photo.jpeg" alt="Description" />
+            <img src="assets/images/group-Photo.jpeg" alt="UPPCH members" />
           </div>
           <div class="frame-box">
-            <img src="assets/images/group-Photo-Side.jpeg" alt="Description" />
+            <img src="assets/images/group-Photo-Side.jpeg" alt="Community gathering" />
           </div>
         </div>
       </section>
 
-      <!-- Mission Uppch Section -->
+      <!-- Mission Section -->
       <section id="mission" class="mission-section">
         <div class="container mission-card-container">
-          <!-- Left Card -->
+
           <div class="mission-card-left">
-            <h2>Become A Proud Volunteer Now</h2>
-            <p>
-              Every person deserves to live with dignity, hope, and opportunity
-              — UPPCH is here to make that a reality for the people of Haiti.
-            </p>
-            <p>
-              We're excited to offer volunteer opportunities at UPPCH in the
-              near future. While our volunteer program isn't live just yet,
-              we're working hard behind the scenes to create meaningful ways for
-              compassionate individuals like you to get involved. Stay
-              tuned—your chance to make a difference is coming soon!
-            </p>
-
-            <button class="mission-read-btn">Read More</button>
+            <h2 data-i18n="mission_left_h2">Vin Yon Manm Aktif Jodi a</h2>
+            <p data-i18n="mission_left_p1">Chanjman sivik egzije patisipasyon sivik — UPPCH la pou ba chak manm kominote nou an yon plas nan tab la.</p>
+            <p data-i18n="mission_left_p2">Nou ap aktèlman bati pwogram manm nou an pou ba moun dedye yo zouti ak platfòm pou fè yon diferans reyèl. Ret konekte.</p>
+            <button class="mission-read-btn" data-i18n="mission_btn">Li Plis</button>
           </div>
 
-          <!-- Right Card -->
           <div class="mission-card-right">
-            <h2>OUR MISSION</h2>
-            <h3>We Aim To Have A Strong Bond With You</h3>
-
+            <h2 data-i18n="mission_right_h2">MISYON NOU</h2>
+            <h3 data-i18n="mission_right_h3">Konstwi yon Ayiti Pi Fò, Ini Ansanm</h3>
             <div class="mission-tabs">
-              <span class="active">OUR MISSION</span>
-              <span>OUR VISION</span>
-              <span>OUR GOALS</span>
+              <span class="active" data-i18n="mission_tab1">MISYON NOU</span>
+              <span data-i18n="mission_tab2">VIZYON NOU</span>
+              <span data-i18n="mission_tab3">OBJEKTIF NOU</span>
             </div>
-
-            <p>
-              UPPCH is a nonprofit organization dedicated to helping the most
-              vulnerable communities in Haiti. Through education, health
-              services, and food assistance, we aim to uplift lives and bring
-              lasting change.
-            </p>
+            <p data-i18n="mission_text_mission">UPPCH se yon òganizasyon sosyal ak politik ki dedye a inite kominote Ayisyen an otou valè jistis, pwogrè, ak detèminasyon pwòp tèt. Atravè angajman sivik, òganizasyon kominotè, ak defans, nou travay pou kreye yon chanjman reyèl ak dirab ann Ayiti ak nan kominote Ayisyen toupatou nan mond lan.</p>
           </div>
+
         </div>
       </section>
 
-      <!-- Latest Events Held By Uppch Section -->
-
+      <!-- Latest Events Section -->
       <section id="latest-events" class="latest-events-section">
         <div class="latest-events-grid">
-          <!-- Left Arrow -->
           <div class="arrow arrow-left">
             <i class="fa-solid fa-chevron-left"></i>
           </div>
 
-          <!-- Center Content -->
           <div class="latest-events-container">
-            <h2>Latest Events</h2>
-            <p>
-              Organization set up to provide help and raise money to help those
-              in need
-            </p>
+            <h2 data-i18n="events_h2">Dènye Evènman</h2>
+            <p data-i18n="events_p">Rasanbleman kominotè, kanpay defans, ak aksyon sivil òganize pa UPPCH</p>
 
             <div class="event-cards">
+
               <div class="event-card">
                 <div class="image-placeholder">
-                  <img src="assets/images/group-Photo.jpeg" alt="Description" />
+                  <img src="assets/images/group-Photo.jpeg" alt="Community event" />
                 </div>
                 <div class="event-info">
-                  <small>By Nicolas Cherubin • July 7, 2025</small>
-                  <h3>Event Title Here</h3>
-                  <p>
-                    Short description of the event goes here, just a few lines.
-                  </p>
-                  <a href="event-details.html">Read More →</a>
+                  <small data-i18n="event1_author">Pa Nicolas Cherubin • 7 Jiyè 2025</small>
+                  <h3 data-i18n="event1_title">Fowòm Defans Kominotè</h3>
+                  <p data-i18n="event1_desc">Manm yo te rasanble pou diskite defi politik ak sosyal kle ki fè fas ak Ayiti ak dyaspora a.</p>
+                  <a href="event-details.html" data-i18n="read_more">Li Plis →</a>
                 </div>
               </div>
 
               <div class="event-card">
                 <div class="image-placeholder"></div>
                 <div class="event-info">
-                  <small>By Nicolas Cherubin • Sep 7, 2012</small>
-                  <h3>Event Title Here</h3>
-                  <p>
-                    Short description of the event goes here, just a few lines.
-                  </p>
-                  <a href="#">Read More →</a>
+                  <small data-i18n="event2_author">Pa Nicolas Cherubin • 7 Sep 2012</small>
+                  <h3 data-i18n="event2_title">Rali Mobilizasyon Sivik</h3>
+                  <p data-i18n="event2_desc">Yon jounen òganizasyon kominotè, edikasyon votè, ak angajman nan baz la.</p>
+                  <a href="event-details2.html" data-i18n="read_more">Li Plis →</a>
                 </div>
               </div>
 
               <div class="event-card">
                 <div class="image-placeholder"></div>
                 <div class="event-info">
-                  <small>By Nicolas Cherubin • Sep 7, 2012</small>
-                  <h3>Event Title Here</h3>
-                  <p>
-                    Short description of the event goes here, just a few lines.
-                  </p>
-                  <a href="#">Read More →</a>
+                  <small data-i18n="event3_author">Pa Nicolas Cherubin • 7 Sep 2012</small>
+                  <h3 data-i18n="event3_title">Panel Diskisyon sou Politik</h3>
+                  <p data-i18n="event3_desc">Lidè UPPCH ak manm kominote yo te abòde priyorite refòm ak objektif òganizasyon an.</p>
+                  <a href="#" data-i18n="read_more">Li Plis →</a>
                 </div>
               </div>
+
             </div>
           </div>
 
-          <!-- Right Arrow -->
           <div class="arrow arrow-right">
             <i class="fa-solid fa-chevron-right"></i>
           </div>
         </div>
       </section>
 
-      <!-- Past Events Timeline Uppch Section -->
+      <!-- Events Timeline -->
       <section id="events-tl" class="events-section">
         <div class="container">
-          <!-- Upcoming Events content -->
+          <!-- Timeline content goes here -->
         </div>
       </section>
 
-      <!-- Mission Uppch Section -->
+      <!-- Contact Section -->
       <section id="contact" class="contact-section">
         <div class="contact-card">
-          <!-- Left: Contact Form -->
           <div class="contact-left">
-            <h2>Contact Us</h2>
-            <p>
-              Please feel free to contact us and we will get back to you as soon
-              as we can
-            </p>
-
+            <h2 data-i18n="contact_h2">Kontakte Nou</h2>
+            <p data-i18n="contact_p">Kontakte nou e yon manm ekip nou an ap reponn ou pi vit posib.</p>
             <form class="contact-form">
-              <input type="text" placeholder="Name" required />
-              <input type="email" placeholder="Email" required />
-              <textarea placeholder="Message" rows="4" required></textarea>
-              <button type="submit">Send</button>
+              <input type="text"  data-i18n-placeholder="contact_name"    placeholder="Non"   required />
+              <input type="email" data-i18n-placeholder="contact_email"   placeholder="Imèl"  required />
+              <textarea           data-i18n-placeholder="contact_message" placeholder="Mesaj" rows="4" required></textarea>
+              <button type="submit" data-i18n="contact_send">Voye</button>
             </form>
           </div>
 
-          <!-- Right: Info & Social -->
           <div class="contact-right">
-            <p><strong>Visit Us</strong><br />65 Country Club Rd, New Jersey</p>
-            <p><strong>Talk to Us</strong><br />732-337-5065</p>
-            <p><strong>Email Us</strong><br />UppchOrg@gmail.com</p>
-            <p><strong>Or Reach Us Here</strong></p>
-
+            <p><strong data-i18n="contact_visit">Vizite Nou</strong><br />65 Country Club Rd, New Jersey</p>
+            <p><strong data-i18n="contact_call">Rele Nou</strong><br />732-337-5065</p>
+            <p><strong data-i18n="contact_email_label">Imèl Nou</strong><br />UppchOrg@gmail.com</p>
+            <p><strong data-i18n="contact_follow">Swiv Nou</strong></p>
             <div class="social-icons">
               <i class="fa-solid fa-envelope"></i>
               <i class="fa-brands fa-facebook"></i>
@@ -368,102 +272,46 @@
         </div>
       </section>
 
-      <!-- Donate to Uppch Section -->
-      <section id="donate" class="donate-section">
-        <div class="container">
-          <div class="donate-card">
-            <h2>
-              <strong>
-                100% of your gift of funds will go towards those we promised to
-                help
-              </strong>
-            </h2>
-            <p>
-              We’re on a mission to bring help to as many people as possible. No
-              matter how small the donation, know that it’s going to a great
-              cause. Every small step takes us closer to the end of the journey.
-            </p>
-
-            <button class="donate-once-btn">Give Once</button>
-
-            <div class="donate-recurring">
-              <p class="monthly-label">Choose an amount to give per month</p>
-              <div class="amount-option-btn-group">
-                <button>$10 USD</button>
-                <button>$20 USD</button>
-                <button>$40 USD</button>
-                <button>$100 USD</button>
-                <div class="other-amount-wrapper">
-                  <span class="currency-symbol">$</span>
-                  <input
-                    type="number"
-                    class="other-amount-input"
-                    placeholder="Other amount"
-                    min="1"
-                    step="1"
-                  />
-                </div>
-              </div>
-              <button class="donate-today-btn">Donate Today</button>
-              <div class="donation-impact">
-                Your <strong>$10.00</strong> donation can help give aid towards
-                many people in need.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- End of main -->
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
       <div class="site-footer-container">
-        <!-- Column 1: Logo & Description -->
+
         <div class="footer-column column1">
           <div class="footer-logo">
             <img src="assets/logo.png" alt="UPPCH Logo" />
           </div>
-          <p class="footer-description">
-            UPPCH is dedicated to uplifting Haiti through education,
-            empowerment, and community support. Together, we build a brighter
-            future.
-          </p>
-          <p class="footer-copyright">
-            &copy; 2025 UPPCH. All rights reserved.
-          </p>
+          <p class="footer-description" data-i18n="footer_desc">UPPCH se yon òganizasyon sosyal ak politik ki angaje nan inite kominote Ayisyen an e defann jistis, pwogrè, ak chanjman dirab.</p>
+          <p class="footer-copyright" data-i18n="footer_copyright">© 2025 UPPCH. Tout dwa rezève.</p>
         </div>
 
-        <!-- Column 2: Quick Links -->
         <div class="footer-column column2">
-          <h2>Quick Links</h2>
+          <h2 data-i18n="footer_quick_links">Lyen Rapid</h2>
           <ul class="footer-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#mission">Our Mission</a></li>
-            <li><a href="#latest-events">Latest Events</a></li>
-            <li><a href="#events">Upcoming Events</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home"          data-i18n="nav_home">Akèy</a></li>
+            <li><a href="#about"         data-i18n="nav_about">Ki Nou Ye</a></li>
+            <li><a href="#mission"       data-i18n="nav_mission">Misyon Nou</a></li>
+            <li><a href="#latest-events" data-i18n="nav_events">Dènye Evènman</a></li>
+            <li><a href="#events-tl"     data-i18n="nav_timeline">Istwa Evènman</a></li>
+            <li><a href="#contact"       data-i18n="nav_contact">Kontakte Nou</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Other Pages (Leave room for expansion) -->
         <div class="footer-column column3">
-          <h2>Other Pages</h2>
+          <h2 data-i18n="footer_other_pages">Lòt Paj</h2>
           <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Volunteer</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Politik Konfidansyalite</a></li>
+            <li><a href="#" data-i18n="footer_terms">Tèm ak Kondisyon</a></li>
+            <li><a href="#" data-i18n="footer_membership">Manm</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Contact Info -->
         <div class="footer-column column4">
-          <h2>Contact Us</h2>
+          <h2 data-i18n="footer_contact">Kontakte Nou</h2>
           <div class="contact-item">
             <i class="fa-solid fa-location-dot"></i>
-            <span>65 Country Club Rd, New Jersey</span>
+            <span data-i18n="nav_address">65 Country Club Rd, New Jersey</span>
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-square-phone"></i>
@@ -474,6 +322,7 @@
             <a href="mailto:UppchOrg@gmail.com">UppchOrg@gmail.com</a>
           </div>
         </div>
+
       </div>
     </footer>
   </body>

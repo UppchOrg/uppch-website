@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   // Initialize Swiper
-  const blogSwiper = new Swiper(".blogSwiper", {
+  const blogSwiper = new Swiper('.blogSwiper', {
     loop: true,
     spaceBetween: 20,
     autoplay: {
@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     breakpoints: {
       700: { slidesPerView: 1 },
@@ -22,5 +22,5 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  console.log("Swiper initialized:", blogSwiper);
+  console.log('Swiper initialized:', blogSwiper);
 });

@@ -1,150 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ht">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UPPCH</title>
+    <title>UPPCH — Fowòm Defans Kominotè</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Google Fonts: Poppins & Roboto -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
-    <!-- My Stylsheey -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/events-1-style.css" />
 
-    <!-- Swiper JS FIRST -->
+    <!-- Load translations BEFORE page JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- JS for the page -->
+    <script src="js/translations.js"></script>
     <script src="js/events-1-main.js"></script>
   </head>
 
-  <body>
-    <!-- Header -->
+  <!-- data-page tells events-1-main.js which key prefix to use for Read More/Less -->
+  <body data-page="ed1">
+
+    <!-- ===== HEADER ===== -->
     <header class="header">
       <div class="nav-container">
-        <!-- Top Bar: Contact + Logo + Social -->
+
+        <!-- Top Bar -->
         <div class="nav-inner top">
-          <!-- Left: Contact Info -->
           <div class="contact-group">
-            <a href="mailto:info@uppch.org" class="contact-link">
-              <i class="fas fa-envelope"></i> info@uppch.org
+            <a href="mailto:UppchOrg@gmail.com" class="contact-link">
+              <i class="fas fa-envelope"></i> UppchOrg@gmail.com
             </a>
-            <a href="tel:+1234567890" class="contact-link">
-              <i class="fas fa-phone-alt"></i> (123) 456-7890
+            <a href="tel:+17323375065" class="contact-link">
+              <i class="fas fa-phone-alt"></i> (732) 337-5065
             </a>
           </div>
 
-          <!-- Center: Logo & Title -->
           <div class="logo-center">
-            <img src="assets/logo.png" alt="Logo" class="logo" />
-            <h1 class="logo-text">Uppch</h1>
+            <img src="assets/logo.png" alt="UPPCH Logo" class="logo" />
+            <h1 class="logo-text">UPPCH</h1>
           </div>
 
-          <!-- Right: Social Media -->
           <div class="social-group">
-            <a href="#" class="social-icon" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" class="social-icon" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" class="social-icon" aria-label="TikTok"
-              ><i class="fab fa-tiktok"></i
-            ></a>
-            <a href="#" class="social-icon" aria-label="X"
-              ><i class="fab fa-x-twitter"></i
-            ></a>
-            <a href="#" class="social-icon" aria-label="YouTube"
-              ><i class="fab fa-youtube"></i
-            ></a>
+            <a href="https://www.facebook.com/UppchOrg"  target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/UppchOrg" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@UppchOrg"   target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://x.com/UppchOrg"             target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://youtube.com/@UppchOrg"      target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
-        <!-- Bottom Bar: Navigation + Donate -->
+        <!-- Bottom Bar -->
         <div class="nav-inner bottom">
-          <!-- Nav Links -->
           <nav class="nav-links desktop-nav">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About Us</a>
-            <a href="index.html#mission">Our Mission</a>
-            <a href="index.html#latest-events">Latest Events</a>
-            <a href="index.html#upcoming-events">Upcoming Events</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="index.html"                  data-i18n="nav_home">Akèy</a>
+            <a href="index.html#about"            data-i18n="nav_about">Ki Nou Ye</a>
+            <a href="index.html#mission"          data-i18n="nav_mission">Misyon Nou</a>
+            <a href="index.html#latest-events"    data-i18n="nav_events">Dènye Evènman</a>
+            <a href="index.html#events-tl"        data-i18n="nav_timeline">Istwa Evènman</a>
+            <a href="index.html#contact"          data-i18n="nav_contact">Kontakte Nou</a>
           </nav>
 
-          <!-- Donate Button -->
-          <div class="donate-group">
-            <a href="#" class="donate-btn">Donate</a>
+          <!-- Language Switcher -->
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="ht" aria-label="Kreyòl Ayisyen">🇭🇹 Kreyòl</button>
+            <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
           </div>
 
-          <!-- Hamburger for Mobile -->
-          <button class="hamburger" id="hamburger">
+          <button class="hamburger" id="hamburger" aria-label="Open menu">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
 
-      <!-- Mobile Menu Overlay -->
+      <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
           <div class="logo-group">
-            <img src="assets/logo.png" alt="Logo" class="logo" />
-            <h1>Uppch</h1>
+            <img src="assets/logo.png" alt="UPPCH Logo" class="logo" />
+            <h1>UPPCH</h1>
           </div>
-          <button class="close-btn" id="closeBtn">
+          <button class="close-btn" id="closeBtn" aria-label="Close menu">
             <i class="fas fa-times"></i>
           </button>
         </div>
         <nav class="mobile-nav-links">
-          <a href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Our Mission</a>
-          <a href="#">Latest Events</a>
-          <a href="#">Upcoming Events</a>
-          <a href="#">Contact</a>
-          <a href="#" class="donate-btn mobile-donate">Donate</a>
+          <a href="index.html"               data-i18n="nav_home">Akèy</a>
+          <a href="index.html#about"         data-i18n="nav_about">Ki Nou Ye</a>
+          <a href="index.html#mission"       data-i18n="nav_mission">Misyon Nou</a>
+          <a href="index.html#latest-events" data-i18n="nav_events">Dènye Evènman</a>
+          <a href="index.html#events-tl"     data-i18n="nav_timeline">Istwa Evènman</a>
+          <a href="index.html#contact"       data-i18n="nav_contact">Kontakte Nou</a>
+          <!-- Mobile lang switcher -->
+          <div class="lang-switcher mobile-lang">
+            <button class="lang-btn active" data-lang="ht">🇭🇹 Kreyòl</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+          </div>
         </nav>
       </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="hero-inner">
-        <h2>A day of remembrance</h2>
+        <h2 data-i18n="ed1_hero_title">Yon Jounen Pou Sonje</h2>
         <div class="btn-group">
-          <a href="#blog-start" class="btn lime">Read More</a>
-          <a href="#" class="btn outline watchVid">Watch Video</a>
+          <a href="#blog-start" class="btn lime"    data-i18n="ed1_hero_read">Li Plis</a>
+          <a href="#"           class="btn outline watchVid" data-i18n="ed1_hero_watch">Gade Videyo</a>
         </div>
         <div class="video-placeholder">
-          <img
-            src="assets/images/event-vid-img.png"
-            alt="Event Preview"
-            class="video-thumbnail"
-          />
-
-          <video
-            src="assets/videos/event.mp4"
-            class="event-video"
-            controls
-          ></video>
+          <img src="assets/images/event-vid-img.png" alt="Event Preview" class="video-thumbnail" />
+          <video src="assets/videos/event.mp4" class="event-video" controls></video>
           <div class="play-button" id="playButton">
             <i class="fas fa-play"></i>
           </div>
@@ -152,148 +126,79 @@
       </div>
     </section>
 
-    <!-- Blog start section -->
-
+    <!-- ===== BLOG START ===== -->
     <section class="blog-start" id="blog-start">
       <div class="container">
-        <h1>A Small view of the U.p.p.c.h. Team</h1>
+        <h1 data-i18n="ed1_blog_h1">Yon Ti Gade sou Ekip U.P.P.C.H.</h1>
         <div class="card-row">
-          <!-- Left Side -->
           <div class="left-text card">
-            <p class="intro">
-              At UPPCH, we believe that compassion and community support are the
-              foundations of lasting change. Our mission is to uplift and
-              empower those in need through direct outreach and sustainable
-              programs.
-            </p>
-            <p class="more-text hidden">
-              With the help of our donors and volunteers, we strive to create
-              opportunities, restore hope, and bring dignity to every life we
-              touch.
-            </p>
-            <button class="read-more-btn" id="readMoreBtn">Read More</button>
+            <p class="intro" data-i18n="ed1_blog_intro">Nan UPPCH, nou kwè ke solidarite ak angajman kominotè se fondasyon yon chanjman dirab. Misyon nou se mobilize ak ranfòse moun k ap fè fas ak defi yo atravè aksyon dirèk ak pwogram òganize.</p>
+            <p class="more-text hidden" data-i18n="ed1_blog_more">Avèk sipò manm nou yo ak alye nou yo, nou travay pou kreye opòtinite, rétabli espwa, ak defann diyite chak moun nou kontre.</p>
+            <button class="read-more-btn" id="readMoreBtn" data-i18n="ed1_read_more">Li Plis</button>
           </div>
-
           <div class="right-text card">
-            <img
-              src="assets/images/group-Photo.jpeg"
-              alt="UPPCH Community"
-              class="blog-image"
-            />
+            <img src="assets/images/group-Photo.jpeg" alt="UPPCH Community" class="blog-image" />
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ===== SWIPER ===== -->
     <section class="blog-swiper" id="blog-swiper">
       <div class="container">
-        <h1>INSIGHT INTO THE EVENT</h1>
-        <h2>
-          United People Promoting Community Hope – Empowering Lives Through
-          Compassion, Action, and Unity
-        </h2>
+        <h1 data-i18n="ed1_swiper_h1">YON APÈSI NAN EVÈNMAN AN</h1>
+        <h2 data-i18n="ed1_swiper_h2">Inite Pèp Ayisyen an — Mobilize pou Jistis, Aksyon, ak Chanjman Dirab</h2>
         <div class="swiper blogSwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img
-                src="assets/images/event-dance-zoomed-2.jpeg"
-                alt="Event Dance Zoomed 2"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/images/back.jpeg" alt="Back" />
-            </div>
-
-            <div class="swiper-slide">
-              <img
-                src="assets/images/event-vid-img.png"
-                alt="Event Video Image"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="assets/images/event-dance-zoomed.jpeg"
-                alt="Event Dance Zoomed"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="assets/images/group-Photo-Side.jpeg"
-                alt="Group Photo Side"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/images/group-Photo.jpeg" alt="Group Photo" />
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/images/event-dance.jpeg" alt="Event Dance" />
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/images/photo-bike.jpeg" alt="Photo Bike" />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="assets/images/speaking-woman.jpeg"
-                alt="Speaking Woman"
-              />
-            </div>
+            <div class="swiper-slide"><img src="assets/images/event-dance-zoomed-2.jpeg" alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/back.jpeg"                 alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/event-vid-img.png"         alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/event-dance-zoomed.jpeg"   alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/group-Photo-Side.jpeg"     alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/group-Photo.jpeg"          alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/event-dance.jpeg"          alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/photo-bike.jpeg"           alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/speaking-woman.jpeg"       alt="Event" /></div>
           </div>
-
-          <!-- Navigation buttons -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
-
-          <!-- Pagination -->
           <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
-    <!-- Footer -->
+
+    <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
       <div class="site-footer-container">
-        <!-- Column 1: Logo & Description -->
         <div class="footer-column column1">
-          <div class="footer-logo">
-            <img src="assets/logo.png" alt="UPPCH Logo" />
-          </div>
-          <p class="footer-description">
-            UPPCH is dedicated to uplifting Haiti through education,
-            empowerment, and community support. Together, we build a brighter
-            future.
-          </p>
-          <p class="footer-copyright">
-            &copy; 2025 UPPCH. All rights reserved.
-          </p>
+          <div class="footer-logo"><img src="assets/logo.png" alt="UPPCH Logo" /></div>
+          <p class="footer-description" data-i18n="footer_desc">UPPCH se yon òganizasyon sosyal ak politik ki angaje nan inite kominote Ayisyen an e defann jistis, pwogrè, ak chanjman dirab.</p>
+          <p class="footer-copyright"   data-i18n="footer_copyright">© 2025 UPPCH. Tout dwa rezève.</p>
         </div>
-
-        <!-- Column 2: Quick Links -->
         <div class="footer-column column2">
-          <h2>Quick Links</h2>
+          <h2 data-i18n="footer_quick_links">Lyen Rapid</h2>
           <ul class="footer-links">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#mission">Our Mission</a></li>
-            <li><a href="index.html#latest-events">Latest Events</a></li>
-            <li><a href="index.html#events">Upcoming Events</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html"               data-i18n="nav_home">Akèy</a></li>
+            <li><a href="index.html#about"         data-i18n="nav_about">Ki Nou Ye</a></li>
+            <li><a href="index.html#mission"       data-i18n="nav_mission">Misyon Nou</a></li>
+            <li><a href="index.html#latest-events" data-i18n="nav_events">Dènye Evènman</a></li>
+            <li><a href="index.html#events-tl"     data-i18n="nav_timeline">Istwa Evènman</a></li>
+            <li><a href="index.html#contact"       data-i18n="nav_contact">Kontakte Nou</a></li>
           </ul>
         </div>
-
-        <!-- Column 3: Other Pages (Leave room for expansion) -->
         <div class="footer-column column3">
-          <h2>Other Pages</h2>
+          <h2 data-i18n="footer_other_pages">Lòt Paj</h2>
           <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Volunteer</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Politik Konfidansyalite</a></li>
+            <li><a href="#" data-i18n="footer_terms">Tèm ak Kondisyon</a></li>
+            <li><a href="#" data-i18n="footer_membership">Manm</a></li>
           </ul>
         </div>
-
-        <!-- Column 4: Contact Info -->
         <div class="footer-column column4">
-          <h2>Contact Us</h2>
+          <h2 data-i18n="footer_contact">Kontakte Nou</h2>
           <div class="contact-item">
             <i class="fa-solid fa-location-dot"></i>
-            <span>65 Country Club Rd, New Jersey</span>
+            <span data-i18n="nav_address">65 Country Club Rd, New Jersey</span>
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-square-phone"></i>
@@ -306,6 +211,7 @@
         </div>
       </div>
     </footer>
+
     <script src="js/blog-swiper.js"></script>
   </body>
 </html>

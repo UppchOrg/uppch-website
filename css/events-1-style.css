@@ -7,27 +7,36 @@
   --black: #000000;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Prevent text selection in swiper */
+.swiper *,
+.swiper *::before,
+.swiper *::after {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #fff;
   padding-top: 75px;
   color: #111;
 }
 
-/* ============================= */
-/*              Header           */
-/*               Nav             */
-/*              Start            */
-/* ============================= */
-
+/* ==============================
+   Header & Nav
+   ============================== */
 .header {
   position: fixed;
   top: 0;
@@ -37,22 +46,21 @@ body {
   z-index: 9999;
   height: 150px;
 }
+
 .nav-container {
   margin: auto;
   width: 100%;
   max-width: 1440px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Top Navigation Section */
+/* Top bar */
 .nav-inner.top {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   color: #fff;
   padding: 12px 0;
-
-  flex-wrap: wrap;
 }
 
 .contact-group,
@@ -62,8 +70,10 @@ body {
   gap: 20px;
 }
 
-.contact-link,
-.social-icon {
+.contact-group { justify-self: start; }
+.social-group  { justify-self: end; }
+
+.contact-link {
   color: #b4ff8d;
   text-decoration: none;
   font-size: 0.95rem;
@@ -86,6 +96,7 @@ body {
   transition: all 0.3s ease;
   font-size: 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
 }
 
 .social-icon:hover {
@@ -99,10 +110,11 @@ body {
   line-height: 1;
 }
 
-/* Centered Logo */
+/* Logo center */
 .logo-center {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   text-align: center;
 }
@@ -118,7 +130,7 @@ body {
   color: #b4ff8d;
 }
 
-/* Bottom Navigation Section */
+/* Bottom bar */
 .nav-inner.bottom {
   display: flex;
   justify-content: space-between;
@@ -128,6 +140,7 @@ body {
   border-top: 1px solid #ddd;
   border-radius: 30px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .nav-links {
@@ -147,23 +160,57 @@ body {
   color: #2ecc71;
 }
 
-/* Donate Button */
-.donate-btn {
-  background-color: #b4ff8d;
-  padding: 10px 20px;
-  border-radius: 25px;
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1.5px solid #ccc;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  border-color: var(--limeGreen);
+  color: var(--greenBack);
+}
+
+.lang-btn.active {
+  background-color: var(--limeGreen);
+  border-color: var(--limeGreen);
   color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-  margin-left: -10px;
+  font-weight: 700;
 }
 
-.donate-btn:hover {
-  background-color: #a3ff6d;
+/* Mobile lang switcher inside mobile menu */
+.mobile-lang {
+  margin-top: 1rem;
 }
 
-/* Hamburger (Mobile Only) */
+.mobile-lang .lang-btn {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.mobile-lang .lang-btn.active {
+  background-color: var(--limeGreen);
+  border-color: var(--limeGreen);
+  color: #000;
+}
+
+/* Hamburger */
 .hamburger {
   display: none;
   background: none;
@@ -173,7 +220,6 @@ body {
   color: #333;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .contact-group,
   .social-group,
@@ -193,29 +239,16 @@ body {
   .nav-inner.bottom {
     padding: 12px 20px;
   }
+
+  .lang-btn {
+    font-size: 0.7rem;
+    padding: 3px 7px;
+  }
 }
 
-/* ============================= */
-/*              Header           */
-/*               Nav             */
-/*               End             */
-/* ============================= */
-
-/* 
-
-
-
-
-
-
-*/
-
-/* ============================= */
-/*              Hero             */
-/*               Nav             */
-/*              Start            */
-/* ============================= */
-
+/* ==============================
+   Hero Section
+   ============================== */
 .hero {
   background-color: var(--greenBack);
   padding: 2rem 1rem;
@@ -284,15 +317,22 @@ body {
   background-color: #dcdcdc;
   margin: 0 auto;
   border-radius: 12px;
-  position: relative; /* Needed for absolute children */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
   bottom: -50px;
+}
+
+.video-placeholder2 {
+  width: 100%;
+  max-width: 350px;
+  height: 550px;
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
 
 .video-thumbnail,
@@ -305,10 +345,11 @@ body {
 }
 
 .event-video {
-  display: none; /* hidden by default */
+  display: none;
 }
+
 .play-button {
-  position: absolute; /* Now relative to .video-placeholder */
+  position: absolute;
   bottom: -100px;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -334,18 +375,7 @@ body {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .nav-inner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-
   .btn-group {
     flex-direction: column;
   }
@@ -357,6 +387,7 @@ body {
   .header {
     padding: 9px;
   }
+
   .play-button {
     width: 80px;
     height: 80px;
@@ -364,36 +395,9 @@ body {
   }
 }
 
-/* ============================= */
-/*              Hero             */
-/*             Section           */
-/*               End             */
-/* ============================= */
-/* 
-
-
-
-
-
-*/
-
-/* =============================*/
-/*             Mobile           */
-/*             Section          */
-/*              Start           */
-/* =============================*/
-
-/* Hide on Desktop */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--black);
-  cursor: pointer;
-}
-
-/* Mobile Menu Overlay */
+/* ==============================
+   Mobile Menu Overlay
+   ============================== */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -404,7 +408,7 @@ body {
   display: none;
   flex-direction: column;
   padding: 1.5rem;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .mobile-menu.active {
@@ -424,7 +428,7 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 1.5rem;
-  transform: translateY(15%);
+  transform: translateY(10%);
 }
 
 .mobile-nav-links a {
@@ -432,15 +436,6 @@ body {
   font-size: 1.2rem;
   text-decoration: none;
   font-weight: 500;
-}
-
-.mobile-nav-links .mobile-donate {
-  background-color: var(--limeGreen);
-  color: #000;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  text-align: center;
 }
 
 .close-btn {
@@ -451,65 +446,38 @@ body {
   cursor: pointer;
 }
 
-/* ============================= */
-/*       Mobile Responsive       */
-/* ============================= */
+.logo-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-group h1 {
+  font-size: 1.2rem;
+  color: white;
+}
+
 @media (max-width: 768px) {
-  .nav-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .desktop-nav,
-  .desktop-donate {
+  .desktop-nav {
     display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .logo-group {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .logo-group h1 {
-    font-size: 1.2rem;
-    color: white;
-  }
-
-  .btn-group {
-    flex-direction: column;
   }
 
   .video-placeholder {
     border-radius: 0;
     height: 250px;
-    justify-content: center;
-    align-items: center;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
   }
 
   .play-button {
     width: 80px;
     height: 80px;
     font-size: 30px;
-    background-color: var(--limeGreen);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    cursor: pointer;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
   }
 
   .play-button:hover {
@@ -517,27 +485,9 @@ body {
   }
 }
 
-/* =============================*/
-/*             Mobile           */
-/*             Section          */
-/*               End            */
-/* =============================*/
-/* 
-
-
-
-
-
-
-
-
-*/
-/* =============================*/
-/*           Blog Start         */
-/*             Section          */
-/*              Start           */
-/* =============================*/
-
+/* ==============================
+   Blog Start Section
+   ============================== */
 .blog-start {
   width: 100%;
   padding: 2rem 1rem;
@@ -553,7 +503,6 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   box-sizing: border-box;
-  /* background-color: #8b4f4f; */
   min-height: 200px;
 }
 
@@ -564,25 +513,19 @@ body {
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
-.blog-start .container p:nth-child(2) {
-  padding-top: 25px;
-}
-/* Flex container for left and right */
+
 .blog-start .card-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-/* 50/50 columns */
 .blog-start .card {
   width: calc(720px - 0.5rem);
-  /* background-color: #ffffff; */
   border-radius: 8px;
   box-sizing: border-box;
 }
 
-/* Left card content */
 .blog-start .left-text {
   padding: 2rem;
 }
@@ -594,7 +537,6 @@ body {
   line-height: 1.6;
 }
 
-/* Right card image fills the card */
 .blog-start .right-text {
   padding: 0;
   display: flex;
@@ -629,7 +571,6 @@ body {
   color: var(--limeGreen);
 }
 
-/* Stack on smaller screens */
 @media (max-width: 768px) {
   .blog-start {
     padding-top: 150px;
@@ -640,16 +581,14 @@ body {
   }
 
   .blog-start .container h1 {
+    padding: 20px 0 0 0;
     font-size: 1.5rem;
   }
 
   .blog-start .right-text img {
     height: auto;
   }
-  .blog-start .container h1 {
-    padding: 20px 0 0 0;
-    font-size: 1.5rem;
-  }
+
   .blog-start .left-text p {
     font-size: 1rem;
   }
@@ -672,33 +611,9 @@ body {
   }
 }
 
-/* =============================*/
-/*           Blog Start         */
-/*             Section          */
-/*               End            */
-/* =============================*/
-/* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
-
-/* =============================*/
-/*           Blog Swiper         */
-/*             Section          */
-/*              Start           */
-/* =============================*/
-
+/* ==============================
+   Blog Swiper Section
+   ============================== */
 .blog-swiper {
   width: 100%;
   padding: 2rem 1rem;
@@ -718,22 +633,25 @@ body {
 
 .blog-swiper .container h1 {
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #000;
   font-size: 3rem;
   padding-bottom: 20px;
 }
 
 .blog-swiper .container h2 {
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: #000;
   font-weight: 300;
   font-size: 2rem;
   padding: 20px 0;
 }
-/* Swiper specific */
+
 .swiper {
   width: 100%;
   height: 300px;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .swiper-slide {
@@ -745,6 +663,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .swiper-slide img {
@@ -753,12 +673,14 @@ body {
   object-fit: cover;
   display: block;
   border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
-/*==============================*/
-/*---------- Footer ------------*/
-/*==============================*/
-
+/* ==============================
+   Footer
+   ============================== */
 .site-footer {
   background-color: #111;
   color: #eee;
@@ -832,10 +754,6 @@ body {
   margin-right: 0.5rem;
 }
 
-/*==============================*/
-/*--------- Responsive ---------*/
-/*==============================*/
-
 @media (max-width: 600px) {
   .site-footer {
     text-align: center;
@@ -849,31 +767,3 @@ body {
     margin: 0 auto;
   }
 }
-
-/*========== Completed =========*/
-/*       Footer Section ----- */
-/*==============================*/
-/* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
-/* ------------------------------------------------ */

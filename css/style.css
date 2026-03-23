@@ -4,7 +4,6 @@
   --cardColor: white;
 }
 
-/* Base styles */
 *,
 *::before,
 *::after {
@@ -12,28 +11,30 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   color: #222121;
   background-color: #fff;
 }
 
-/* Header */
+/* ==============================
+   Header
+   ============================== */
 .header {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* optional */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Top Navigation */
 .top-nav {
   background: #181818;
   color: white;
@@ -73,10 +74,10 @@ body {
   text-decoration: underline;
 }
 
-/* Bottom Navigation */
+/* Bottom Nav */
 .bottom-nav {
   background: white;
-  padding: 1rem 1rem;
+  padding: 1rem;
   border-bottom: 1px solid #ccc;
   position: relative;
   z-index: 100;
@@ -151,7 +152,41 @@ body {
 .bottom-nav .right-text ul li a:hover {
   color: var(--orange);
 }
-/* Hamburger Button */
+
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 12px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1.5px solid #ccc;
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.lang-btn.active {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+/* Hamburger */
 .bottom-nav .menu-btn {
   display: none;
   flex-direction: column;
@@ -177,7 +212,6 @@ body {
   display: block;
 }
 
-/* Hamburger Nav Active State */
 .bottom-nav .right-text.active {
   display: flex;
   flex-direction: column;
@@ -201,7 +235,9 @@ body {
   text-align: center;
 }
 
-/* ---------------------------- Main -------------------- */
+/* ==============================
+   Main & Hero
+   ============================== */
 main {
   width: 100%;
   height: auto;
@@ -214,6 +250,7 @@ main {
   height: 700px;
   background-color: rgb(47, 47, 47);
 }
+
 .hero-section .container {
   grid-column: 2;
   width: 100%;
@@ -222,10 +259,11 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 1rem; /* adds spacing on mobile */
+  padding: 0 1rem;
   box-sizing: border-box;
   background: none;
 }
+
 .hero-left-arrow,
 .hero-right-arrow {
   display: flex;
@@ -255,7 +293,6 @@ main {
   color: black;
 }
 
-/*  */
 .hero-section h1 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -287,8 +324,8 @@ main {
 
 .btn-group {
   display: flex;
-  justify-content: flex-start; /* Align buttons to the left */
-  gap: 1rem; /* Add spacing between buttons */
+  justify-content: flex-start;
+  gap: 1rem;
 }
 
 .btn-group a {
@@ -303,7 +340,6 @@ main {
   text-decoration: none;
 }
 
-/* First button (orange) */
 .btn-group a.btn-primary {
   background-color: var(--orange);
   color: white;
@@ -313,43 +349,17 @@ main {
   background-color: var(--orangeDarker);
 }
 
-/* Second button (white) */
 .btn-group a.btn-secondary {
   background-color: white;
   color: black;
 }
 
 .btn-group a.btn-secondary:hover {
-  background-color: #000000;
+  background-color: #000;
   color: white;
 }
 
-/* Left (orange) button */
-.btn-group button:first-child {
-  background-color: var(--orange);
-  color: white;
-}
-
-/* Right (white) button */
-.btn-group button:last-child {
-  background-color: white;
-  color: black;
-}
-
-/* Hover effects */
-.btn-group button:first-child:hover {
-  background-color: var(--orangeDarker);
-}
-
-.btn-group button:last-child:hover {
-  background-color: #000000;
-  color: white;
-}
-
-/* ----------------------------------------------- */
-
-/* Global styles for all the section below the hero */
-
+/* Section globals */
 main .container {
   width: 90%;
   max-width: 1440px;
@@ -359,53 +369,31 @@ main .container {
   color: #fff;
 }
 
-/* Generic section styling (non-hero) */
 section:not(.hero-section) {
   width: 100%;
   padding: 1em 0;
 }
 
-/* Shared container behavior */
-/* that red section background */
 section .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  /* background: red; */
 }
 
-/* White background sections */
-.home-section,
 .mission-section,
-.events-section,
-.donate-section {
+.events-section {
   background-color: #fff;
 }
 
-/* Light gray background sections */
 .about-section,
 .latest-events-section,
 .contact-section {
   background-color: #f7f7f7;
 }
 
-/* 
-
-
-
-
---------------------------------------------------------------- 
-
-
-
-
-
-*/
-/*==============================*/
-/*------- About Section ----- */
-/*=========== Start ===========*/
-
-/* your styles here */
+/* ==============================
+   About Section
+   ============================== */
 .about-section .container {
   background: none;
 }
@@ -414,9 +402,6 @@ section .container {
   background-color: #f7f7f7;
 }
 
-/* ========================== */
-/*      Layout Container      */
-/* ========================== */
 #about.about-section {
   scroll-margin-top: 120px;
 }
@@ -434,9 +419,6 @@ section .container {
   box-sizing: border-box;
 }
 
-/* ========================== */
-/*------- Card Styling       */
-/* ========================== */
 .about-card-left,
 .about-card-right {
   flex: 1 1 48%;
@@ -457,6 +439,7 @@ section .container {
   letter-spacing: 1px;
   padding-bottom: 30px;
 }
+
 .about-card-left h2,
 .about-card-left p {
   text-align: left;
@@ -469,6 +452,7 @@ section .container {
   color: rgb(17, 17, 17);
   padding-bottom: 10px;
 }
+
 .about-card-left p:nth-child(2) {
   padding-bottom: 25px;
 }
@@ -500,9 +484,7 @@ section .container {
   background-color: var(--orangeDarker);
 }
 
-/* ========================== */
-/*-------Video Wrapper       */
-/* ========================== */
+/* Video Wrapper */
 .custom-video-wrapper {
   position: relative;
   width: 100%;
@@ -517,16 +499,13 @@ section .container {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-color: #000 !important;
-  background-image: url("/assets/images/event-vid-img.png");
+  background-color: #000;
+  background-image: url('/assets/images/event-vid-img.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* ========================== */
-/*     Custom Play Button     */
-/* ========================== */
 .custom-play-button {
   position: absolute;
   top: 50%;
@@ -546,7 +525,7 @@ section .container {
 }
 
 .custom-play-button::before {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-left: 14px solid white;
@@ -558,9 +537,6 @@ section .container {
   background-color: var(--orangeDarker);
 }
 
-/* ========================== */
-/*     Responsive Behavior    */
-/* ========================== */
 @media (max-width: 700px) {
   #about.about-section .about-card-container {
     padding: 0;
@@ -576,38 +552,26 @@ section .container {
     box-shadow: none;
   }
 
-  .about-card-container {
-    padding: 1rem; /* Optional: keep or adjust as needed */
-  }
-
   .about-card-left h2,
   .about-card-left p {
     text-align: left;
   }
+
   .about-card-right p {
     text-align: left;
     font-size: 1.2rem;
     padding-bottom: 20px;
   }
+
   .about-read-btn {
     display: block;
     width: 100%;
   }
 }
 
-/*========== Completed =========*/
-/*-------About Section  ----- */
-/*==============================*/
-/* 
- */
-/*==============================*/
-/*--- Picture Frame Section ---- */
-/*=========== Start ===========*/
-
-.picture-frame-section {
-  background-color: #fff;
-}
-
+/* ==============================
+   Picture Frame Section
+   ============================== */
 .picture-frame-section {
   background-color: #f7f7f7;
   padding: 2rem 1rem;
@@ -645,12 +609,12 @@ section .container {
   pointer-events: none;
 }
 
-/* Responsive: stack vertically on mobile */
 @media (max-width: 700px) {
   section .container.picture-frame-container {
     background: #f7f7f7;
-    padding: 2rem 2rem;
+    padding: 2rem;
   }
+
   .frame-box {
     flex: 1 1 100%;
   }
@@ -660,32 +624,13 @@ section .container {
   }
 }
 
-/*========== Completed =========*/
-/*----Picture Frame Section --- */
-/*==============================*/
-/* 
-
-
-
-
-
-
-
-
-
-
-
-*/
-/*==============================*/
-/*------- Mission Section ----- */
-/*=========== Start ===========*/
-.mission-section {
-  scroll-margin-top: 120px;
-}
-
+/* ==============================
+   Mission Section
+   ============================== */
 .mission-section {
   background-color: #fff;
   padding: 2rem 1rem;
+  scroll-margin-top: 120px;
 }
 
 .mission-card-container {
@@ -696,9 +641,6 @@ section .container {
   margin: 0 auto;
 }
 
-/* ========================== */
-/*-------- Left Card -------- */
-/* ========================== */
 .mission-card-left {
   background-color: #d4d4d4;
   padding: 2rem;
@@ -722,6 +664,7 @@ section .container {
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
+
 .mission-card-left p:nth-of-type(2) {
   display: none;
 }
@@ -741,9 +684,6 @@ section .container {
   background-color: var(--orangeDarker);
 }
 
-/* ========================== */
-/*-------- Right Card --------*/
-/* ========================== */
 .mission-card-right {
   background-color: #fff;
   padding: 2rem;
@@ -785,7 +725,7 @@ section .container {
 }
 
 .mission-tabs span::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -813,9 +753,6 @@ section .container {
   font-size: 1rem;
 }
 
-/* ========================== */
-/*-------- Responsive --------*/
-/* ========================== */
 @media (max-width: 700px) {
   .mission-card-container {
     grid-template-columns: 1fr;
@@ -839,31 +776,13 @@ section .container {
   }
 }
 
-/* 
-
-
-
-
-
-
-
-
-
-
-
-*/
-/*==============================*/
-/*     Latest Events Section    */
-/*=========== Start ===========*/
-
-.latest-events-section {
-  background-color: #f7f7f7;
-  scroll-margin-top: 150px;
-}
-
+/* ==============================
+   Latest Events Section
+   ============================== */
 .latest-events-section {
   background-color: #fff;
   padding: 3rem 1rem;
+  scroll-margin-top: 150px;
 }
 
 .latest-events-grid {
@@ -901,8 +820,8 @@ section .container {
 .event-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem; /* Control spacing between cards */
-  width: 100%; /* Full width of the 1440px container */
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .event-card {
@@ -914,7 +833,7 @@ section .container {
   text-align: left;
   display: flex;
   flex-direction: column;
-  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition here */
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .event-card:hover {
@@ -960,7 +879,6 @@ section .container {
   font-size: 0.95rem;
 }
 
-/* Responsive */
 @media (max-width: 700px) {
   .latest-events-section .arrow {
     display: none;
@@ -975,51 +893,16 @@ section .container {
   }
 }
 
-/*========== Completed =========*/
-/*    Latest Events Section     */
-/*==============================*/
-/* 
-
-
-
-
-
-
-
-
-
-
-
-*/
-/*==============================*/
-/*     Upcoming Events Section  */
-/*=========== Start ===========*/
-
+/* ==============================
+   Events Timeline Section
+   ============================== */
 .events-section {
-  /* background-color: #fff; */
   padding: 4rem 1rem;
 }
 
-/*========== Completed =========*/
-/*   Upcoming Events Section    */
-/*==============================*/
-/* 
-
-
-
-
-
-
-
-
-
-
-
-*/
-/*==============================*/
-/*------ Contact Section -------*/
-/*=========== Start ===========*/
-
+/* ==============================
+   Contact Section
+   ============================== */
 .contact-section {
   background-color: #555;
   padding: 4rem 1rem;
@@ -1111,13 +994,11 @@ section .container {
   color: var(--orange);
 }
 
-/*==============================*/
-/*--------- Responsive ---------*/
-/*==============================*/
 @media (max-width: 768px) {
   .contact-section {
     background-color: #1a1a1a;
   }
+
   .contact-card {
     grid-template-columns: 1fr;
     box-shadow: none;
@@ -1129,234 +1010,9 @@ section .container {
   }
 }
 
-/*========== Completed =========*/
-/*       Contact Section ----- */
-/*==============================*/
-/* 
-
-
-
-
-
-
-
-
-
-
-
-*/
-/*==============================*/
-/*------- Donate Section -------*/
-/*=========== Start ===========*/
-.donate-section {
-  background-color: #176c70;
-  padding: 4rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.donate-section .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 500px;
-  width: 100%;
-}
-
-.donate-card {
-  background-color: #f3f3f3;
-  border-radius: 12px;
-  width: 100%;
-  padding: 3rem 2rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.donate-card h2 {
-  font-size: 1.2rem;
-  color: #00775f;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.donate-card p {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
-.donate-card p:nth-child(1) {
-  font-size: 1.5rem;
-}
-.donate-once-btn,
-.donate-today-btn {
-  width: 100%;
-  background-color: var(--orange);
-  color: white;
-  font-weight: bold;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-  transition: background-color 0.3s ease;
-}
-
-.donate-once-btn:hover,
-.donate-today-btn:hover {
-  background-color: var(--orangeDarker);
-}
-
-.monthly-label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #333;
-}
-
-.amount-option-btn-group {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.amount-option-btn-group button:not(.join-btn) {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  background-color: #e9eae4;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 100%;
-  color: #595757;
-  transition: all 0.2s ease;
-}
-
-.amount-option-btn-group button:hover:not(.join-btn) {
-  background-color: #dedfda;
-}
-
-/* 4th button goes to new line */
-.amount-option-btn-group button:nth-child(4) {
-  grid-column: 1 / 2;
-}
-
-/* Other amount spans two columns */
-.other-amount-wrapper {
-  grid-column: 2 / 4;
-  display: flex;
-  align-items: center;
-  background-color: #f8f8f8;
-  border: 1px dashed #ccc;
-  border-radius: 10px;
-  padding: 0.5rem 0.75rem;
-}
-
-.currency-symbol {
-  margin-right: 0.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.other-amount-input {
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 1rem;
-  color: #595757;
-  width: 100%;
-}
-
-.join-btn {
-  grid-column: 1 / 4;
-  background-color: var(--orange);
-  color: white;
-  font-weight: bold;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.join-btn:hover {
-  background-color: var(--orangeDarker);
-}
-
-.donation-impact {
-  font-size: 0.85rem;
-  color: #222;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 0.75rem;
-  border-radius: 6px;
-  margin-top: 1rem;
-}
-
-.donation-impact strong {
-  position: relative;
-  z-index: 1;
-}
-
-.donation-impact strong::before {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: -3px;
-  width: 115%;
-  height: 2px;
-  background-color: var(--orange);
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
-}
-
-.donation-impact strong:hover::before {
-  height: 25px;
-}
-
-/* Responsive */
-@media (max-width: 500px) {
-  .amount-option-btn-group {
-    grid-template-columns: 1fr;
-  }
-
-  .amount-option-btn-group button,
-  .donate-today-btn,
-  .donate-once-btn,
-  .join-btn {
-    font-size: 0.9rem;
-  }
-
-  .other-amount-wrapper {
-    grid-column: 1 / 2;
-  }
-}
-
-/*========== Completed =========*/
-/*       Donate Section ----- */
-/*==============================*/
-
-/* 
-
-
-
-
-
-
-
-
-
-
-
-*/
-/*==============================*/
-/*---------- Footer ------------*/
-/*==============================*/
-
+/* ==============================
+   Footer
+   ============================== */
 .site-footer {
   background-color: #111;
   color: #eee;
@@ -1430,10 +1086,6 @@ section .container {
   margin-right: 0.5rem;
 }
 
-/*==============================*/
-/*--------- Responsive ---------*/
-/*==============================*/
-
 @media (max-width: 600px) {
   .site-footer {
     text-align: center;
@@ -1448,34 +1100,9 @@ section .container {
   }
 }
 
-/*========== Completed =========*/
-/*       Footer Section ----- */
-/*==============================*/
-/* 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
-/* ------------------------------------------------ */
-/* Responsive */
+/* ==============================
+   Responsive — Nav & Hero
+   ============================== */
 @media (max-width: 1000px) {
   .top-nav .right-text {
     display: none;
@@ -1489,6 +1116,16 @@ section .container {
 
   .bottom-nav .right-text {
     display: none;
+  }
+
+  /* Keep lang switcher visible on mobile — sits next to hamburger */
+  .bottom-nav .right-text .lang-switcher {
+    display: flex;
+  }
+
+  .lang-btn {
+    font-size: 0.7rem;
+    padding: 3px 7px;
   }
 
   .bottom-nav .left-text {
@@ -1505,8 +1142,6 @@ section .container {
     display: flex;
   }
 
-  /* Hero section */
-
   .hero-left-arrow,
   .hero-right-arrow {
     display: none;
@@ -1521,21 +1156,25 @@ section .container {
     margin-bottom: 1rem;
     text-align: center;
   }
+
   .hero-section p {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
   }
+
   .hero-section h2 {
     font-size: 1rem;
     margin-bottom: 1rem;
     text-align: center;
   }
+
   .btn-group {
     display: flex;
     justify-content: center;
   }
 }
+
 @media (max-width: 1200px) {
   .hero-section {
     height: auto;
