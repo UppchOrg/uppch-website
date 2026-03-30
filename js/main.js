@@ -1,121 +1,213 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ============================================
-  // i18n — Language Detection & Switching
-  // ============================================
-
   const SUPPORTED_LANGS = ['ht', 'en', 'fr'];
-  const DEFAULT_LANG = 'ht';
+  const DEFAULT_LANG    = 'en';  // ← English default
+  const LANG_LABELS     = { ht: 'Kreyòl', en: 'English', fr: 'Français' };
+  const MISSION_KEYS    = ['mission_text_mission', 'mission_text_vision', 'mission_text_goals'];
 
+  const missionText = document.getElementById('missionText');
+  const tabs        = document.querySelectorAll('.mission-tabs span');
+  let   activeMissionIndex = 0;
+
+  // ── Swiper — photo strip ────────────────────────
+  if (document.querySelector('.heroSwiper')) {
+    new Swiper('.heroSwiper', {
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false },
+      slidesPerView: 1,
+      spaceBetween: 0,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      breakpoints: {
+        640:  { slidesPerView: 2, spaceBetween: 3 },
+        1024: { slidesPerView: 3, spaceBetween: 3 },
+      },
+    });
+  }
+
+  // ── Scroll reveal ───────────────────────────────
+  const revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    revealObserver.observe(el);
+  });
+
+  // ── Language helpers ────────────────────────────
   function detectLanguage() {
-    // 1. Check localStorage for a saved user preference
     const saved = localStorage.getItem('uppch_lang');
     if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
-
-    // 2. Check browser language (navigator.language returns e.g. "en-US", "fr-FR", "ht")
     const browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
     if (browser.startsWith('fr')) return 'fr';
-    if (browser.startsWith('en')) return 'en';
     if (browser.startsWith('ht')) return 'ht';
-
-    // 3. Default to Haitian Creole
     return DEFAULT_LANG;
   }
 
   function applyLanguage(lang) {
     if (!translations[lang]) return;
     const t = translations[lang];
-
-    // Update <html lang=""> attribute for accessibility & SEO
     document.documentElement.lang = lang;
 
-    // Swap every element that has a data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       const key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) {
-        // Use innerHTML for elements that may contain nested tags (like <br>)
+      if (t[key] === undefined) return;
+      // Preserve .active class on mission tab spans
+      if (el.tagName === 'SPAN' && el.closest('.mission-tabs')) {
+        el.textContent = t[key];
+      } else {
         el.innerHTML = t[key];
       }
     });
 
-    // Swap placeholder attributes (inputs/textareas)
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
       const key = el.getAttribute('data-i18n-placeholder');
-      if (t[key] !== undefined) {
-        el.placeholder = t[key];
-      }
+      if (t[key] !== undefined) el.placeholder = t[key];
     });
 
-    // Update active state on language switcher buttons
-    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    // Update desktop dropdown button label
+    document.querySelectorAll('.lang-dropdown-btn').forEach(function (btn) {
+      const lbl = btn.querySelector('.lang-label');
+      if (lbl) lbl.textContent = LANG_LABELS[lang] || lang;
+    });
+
+    // Update desktop dropdown option active state
+    document.querySelectorAll('.lang-option').forEach(function (opt) {
+      opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+    });
+
+    // Update mobile lang pill active state
+    document.querySelectorAll('.mobile-lang-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
 
-    // Update mission tab text in the JS content object to match language
-    updateMissionContent(lang);
+    // Mission text in sync with current active tab
+    if (missionText && t[MISSION_KEYS[activeMissionIndex]]) {
+      missionText.textContent = t[MISSION_KEYS[activeMissionIndex]];
+    }
   }
 
   function setLanguage(lang) {
     localStorage.setItem('uppch_lang', lang);
     applyLanguage(lang);
+    closeAllDropdowns();
   }
 
-  // Language switcher button clicks
-  document.querySelectorAll('.lang-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      setLanguage(this.getAttribute('data-lang'));
+  function closeAllDropdowns() {
+    document.querySelectorAll('.lang-dropdown-menu').forEach(m => m.classList.remove('open'));
+    document.querySelectorAll('.lang-dropdown-btn').forEach(b => b.classList.remove('open'));
+  }
+
+  // ── Desktop dropdown ────────────────────────────
+  function initLangDropdowns() {
+    document.querySelectorAll('.lang-dropdown-wrapper').forEach(function (wrapper) {
+      const btn  = wrapper.querySelector('.lang-dropdown-btn');
+      const menu = wrapper.querySelector('.lang-dropdown-menu');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = menu.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) { menu.classList.add('open'); btn.classList.add('open'); }
+      });
+
+      menu.querySelectorAll('.lang-option').forEach(function (opt) {
+        opt.addEventListener('click', function (e) {
+          e.stopPropagation();
+          setLanguage(this.getAttribute('data-lang'));
+        });
+      });
+    });
+    document.addEventListener('click', closeAllDropdowns);
+  }
+
+  initLangDropdowns();
+  applyLanguage(detectLanguage());
+
+  // ── Mission tabs ────────────────────────────────
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      activeMissionIndex = index;
+      const lang = localStorage.getItem('uppch_lang') || detectLanguage();
+      const t    = translations[lang];
+      if (missionText && t[MISSION_KEYS[index]]) {
+        missionText.textContent = t[MISSION_KEYS[index]];
+      }
     });
   });
 
-  // Run on page load
-  const currentLang = detectLanguage();
-  applyLanguage(currentLang);
+  // ── Mobile nav ──────────────────────────────────
+  const menuBtn       = document.querySelector('.menu-btn');
+  const mobileOverlay = document.getElementById('mobileNavOverlay');
+  const mobileClose   = document.getElementById('mobileNavClose');
 
+  function openMobileNav() {
+    if (!mobileOverlay) return;
+    mobileOverlay.classList.add('active');
+    if (menuBtn) menuBtn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
-  // ============================================
-  // Toggle mobile nav menu
-  // ============================================
-  const menuBtn = document.querySelector('.menu-btn');
-  const rightText = document.querySelector('.bottom-nav .right-text');
+  function closeMobileNav() {
+    if (!mobileOverlay) return;
+    mobileOverlay.classList.remove('active');
+    if (menuBtn) menuBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-  if (menuBtn && rightText) {
-    menuBtn.addEventListener('click', function () {
-      menuBtn.classList.toggle('active');
-      rightText.classList.toggle('active');
-    });
+  if (menuBtn) menuBtn.addEventListener('click', function () {
+    mobileOverlay.classList.contains('active') ? closeMobileNav() : openMobileNav();
+  });
 
-    document.querySelectorAll('.bottom-nav .right-text a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        menuBtn.classList.remove('active');
-        rightText.classList.remove('active');
-      });
+  // ✕ button inside panel
+  if (mobileClose) mobileClose.addEventListener('click', closeMobileNav);
+
+  // Close on backdrop click (outside panel)
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', function (e) {
+      if (e.target === mobileOverlay) closeMobileNav();
     });
   }
 
+  // Close on nav link click
+  if (mobileOverlay) {
+    mobileOverlay.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMobileNav);
+    });
+  }
 
-  // ============================================
-  // Read More / Read Less — About section
-  // ============================================
-  const aboutBtn = document.querySelector('.about-read-btn');
-  const aboutPara = document.querySelector('.about-card-left p:nth-child(4)');
+  // Mobile lang pill buttons — simple, no dropdown
+  document.querySelectorAll('.mobile-lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setLanguage(this.getAttribute('data-lang'));
+      // Don't close the menu — let user see the change applied
+    });
+  });
+
+  // ── About Read More ─────────────────────────────
+  const aboutBtn  = document.querySelector('.about-read-btn');
+  const aboutPara = document.querySelector('.about-left p[data-i18n="about_left_p3"]');
 
   if (aboutBtn && aboutPara) {
     aboutBtn.addEventListener('click', function () {
       const isVisible = aboutPara.style.display === 'block';
       aboutPara.style.display = isVisible ? 'none' : 'block';
-      // Update button text in current language
       const lang = localStorage.getItem('uppch_lang') || detectLanguage();
-      const t = translations[lang];
-      aboutBtn.setAttribute('data-i18n', isVisible ? 'about_btn' : 'about_btn_less');
+      const t    = translations[lang];
       aboutBtn.textContent = isVisible ? t['about_btn'] : (t['about_btn_less'] || 'Read Less');
     });
   }
 
-
-  // ============================================
-  // Read More / Read Less — Mission section
-  // ============================================
-  const missionBtn = document.querySelector('.mission-read-btn');
+  // ── Mission Read More ───────────────────────────
+  const missionBtn  = document.querySelector('.mission-read-btn');
   const missionPara = document.querySelector('.mission-card-left p:nth-of-type(2)');
 
   if (missionBtn && missionPara) {
@@ -123,17 +215,14 @@ document.addEventListener('DOMContentLoaded', function () {
       const isVisible = missionPara.style.display === 'block';
       missionPara.style.display = isVisible ? 'none' : 'block';
       const lang = localStorage.getItem('uppch_lang') || detectLanguage();
-      const t = translations[lang];
+      const t    = translations[lang];
       missionBtn.textContent = isVisible ? t['mission_btn'] : (t['mission_btn_less'] || 'Read Less');
     });
   }
 
-
-  // ============================================
-  // Custom play button — About section video
-  // ============================================
+  // ── Video play button ───────────────────────────
   const playButton = document.getElementById('playButton');
-  const video = document.getElementById('aboutVideo');
+  const video      = document.getElementById('aboutVideo');
 
   if (playButton && video) {
     playButton.addEventListener('click', function () {
@@ -142,39 +231,5 @@ document.addEventListener('DOMContentLoaded', function () {
       playButton.style.display = 'none';
     });
   }
-
-
-  // ============================================
-  // Mission tabs
-  // ============================================
-  const tabs = document.querySelectorAll('.mission-tabs span');
-  const missionText = document.querySelector('.mission-card-right p');
-
-  function updateMissionContent(lang) {
-    if (!missionText) return;
-    const t = translations[lang];
-    // Find the currently active tab and show its content
-    const activeTab = document.querySelector('.mission-tabs span.active');
-    if (!activeTab) return;
-    const index = Array.from(tabs).indexOf(activeTab);
-    const keys = ['mission_text_mission', 'mission_text_vision', 'mission_text_goals'];
-    if (keys[index] && t[keys[index]]) {
-      missionText.textContent = t[keys[index]];
-    }
-  }
-
-  tabs.forEach(function (tab, index) {
-    tab.addEventListener('click', function () {
-      tabs.forEach(function (t) { t.classList.remove('active'); });
-      this.classList.add('active');
-
-      const lang = localStorage.getItem('uppch_lang') || detectLanguage();
-      const t = translations[lang];
-      const keys = ['mission_text_mission', 'mission_text_vision', 'mission_text_goals'];
-      if (missionText && t[keys[index]]) {
-        missionText.textContent = t[keys[index]];
-      }
-    });
-  });
 
 });

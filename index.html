@@ -1,29 +1,23 @@
 <!doctype html>
-<html lang="ht">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UPPCH</title>
+    <title>UPPCH — Uniting the Haitian Community</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Load translations BEFORE main.js so the object is available on DOMContentLoaded -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
-    <header class="header">
 
-      <!-- Top Nav -->
+    <!-- ═══ HEADER ═══ -->
+    <header class="header">
       <div class="top-nav">
         <div class="container">
           <div class="left-text">
@@ -32,298 +26,483 @@
           </div>
           <div class="right-text">
             <a href="tel:7323375065"><i class="fa-solid fa-square-phone"></i> 732-337-5065</a>
-            <a href="mailto:UppchOrg@gmail.com" title="Email Us">
-              <i class="fa-solid fa-envelope"></i> UppchOrg@gmail.com
-            </a>
-            <a href="https://www.facebook.com/UppchOrg" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-square-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/UppchOrg" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-square-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@UppchOrg" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
-            <a href="https://x.com/UppchOrg" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://youtube.com/@UppchOrg" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
+            <a href="/cdn-cgi/l/email-protection#37624747545f78455077505a565e5b1954585a"><i class="fa-solid fa-envelope"></i> <span class="__cf_email__" data-cfemail="db8eababb8b394a9bc9bbcb6bab2b7f5b8b4b6">[email&#160;protected]</span></a>
+            <a href="https://www.facebook.com/UppchOrg"  target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/UppchOrg" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@UppchOrg"   target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://x.com/UppchOrg"             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com/@UppchOrg"      target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
       </div>
-
-      <!-- Bottom Nav -->
       <div class="bottom-nav">
-        <div class="container">
-          <div class="left-text">
+        <div class="nav-row">
+          <div class="nav-logo">
             <img src="assets/logo.png" alt="UPPCH Logo" class="logo" />
             <div class="logo-text">
               <h1>UPPCH</h1>
               <p>Union Patriotique Pour le Progres et le Changement d'Haiti</p>
             </div>
           </div>
-          <div class="right-text">
-            <ul>
-              <li><a href="#home"     data-i18n="nav_home">Akèy</a></li>
-              <li><a href="#about"    data-i18n="nav_about">Ki Nou Ye</a></li>
-              <li><a href="#mission"  data-i18n="nav_mission">Misyon Nou</a></li>
-              <li><a href="#latest-events" data-i18n="nav_events">Dènye Evènman</a></li>
-              <li><a href="#events-tl" data-i18n="nav_timeline">Istwa Evènman</a></li>
-              <li><a href="#contact"  data-i18n="nav_contact">Kontakte Nou</a></li>
-            </ul>
-
-            <!-- Language Switcher -->
-            <div class="lang-switcher">
-              <button class="lang-btn active" data-lang="ht" aria-label="Kreyòl Ayisyen">🇭🇹 Kreyòl</button>
-              <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
-              <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+          <nav class="desktop-links">
+            <a href="#home"          data-i18n="nav_home">Home</a>
+            <a href="#about"         data-i18n="nav_about">About Us</a>
+            <a href="#mission"       data-i18n="nav_mission">Our Mission</a>
+            <a href="#latest-events" data-i18n="nav_events">Latest Events</a>
+            <a href="#events-tl"     data-i18n="nav_timeline">Events Timeline</a>
+            <a href="statutes.html"  data-i18n="nav_statutes">Statutes</a>
+          </nav>
+          <div class="nav-right">
+            <a href="#contact" class="nav-contact-btn" data-i18n="nav_contact">Contact</a>
+            <div class="lang-dropdown-wrapper">
+              <button class="lang-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+                <span class="lang-label">English</span>
+                <span class="chevron">▼</span>
+              </button>
+              <div class="lang-dropdown-menu" role="menu">
+                <button class="lang-option" data-lang="ht">Kreyòl</button>
+                <button class="lang-option active" data-lang="en">English</button>
+                <button class="lang-option" data-lang="fr">Français</button>
+              </div>
             </div>
-          </div>
-          <div class="menu-btn">
-            <i class="fa-solid fa-bars open-icon"></i>
-            <i class="fa-solid fa-xmark close-icon"></i>
+            <button class="menu-btn" aria-label="Open menu">
+              <i class="fa-solid fa-bars open-icon"></i>
+              <i class="fa-solid fa-xmark close-icon"></i>
+            </button>
           </div>
         </div>
       </div>
-
     </header>
+
+    <!-- ═══ MOBILE NAV OVERLAY ═══ -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+      <div class="mobile-nav-panel">
+        <div class="mobile-nav-header">
+          <div class="mobile-nav-logo">
+            <img src="assets/logo.png" alt="UPPCH Logo" />
+            <span>UPPCH</span>
+          </div>
+          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <nav class="mobile-nav-links">
+          <a href="#home"          data-i18n="nav_home">Home</a>
+          <a href="#about"         data-i18n="nav_about">About Us</a>
+          <a href="#mission"       data-i18n="nav_mission">Our Mission</a>
+          <a href="#latest-events" data-i18n="nav_events">Latest Events</a>
+          <a href="#events-tl"     data-i18n="nav_timeline">Events Timeline</a>
+          <a href="statutes.html"  data-i18n="nav_statutes">Statutes</a>
+          <a href="#contact"       data-i18n="nav_contact">Contact</a>
+        </nav>
+        <div class="mobile-nav-lang">
+          <p class="mobile-lang-label">Language / Langue / Lang</p>
+          <div class="mobile-lang-btns">
+            <button class="mobile-lang-btn" data-lang="ht">Kreyòl</button>
+            <button class="mobile-lang-btn active" data-lang="en">English</button>
+            <button class="mobile-lang-btn" data-lang="fr">Français</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <main>
 
-      <!-- Hero Section -->
+      <!-- ═══ HERO ═══ -->
       <section id="home" class="hero-section">
-        <div class="hero-left-arrow">
-          <a href=""><i class="fa-solid fa-chevron-left"></i></a>
-        </div>
-        <div class="container">
-          <h1 data-i18n="hero_h1">INITE KOMINOTE AYISYEN AN POU YON CHANJMAN REYÈL</h1>
-          <p>
-            <span data-i18n="hero_p1">Pèp Ayiti a</span><br />
-            <span data-i18n="hero_p2">Merite yon</span> <span class="hero-highlight" data-i18n="hero_span">Pi Bon Avni</span>
-          </p>
-          <h2 data-i18n="hero_h2">
-            Ansanm nou òganize, defann, e n'aji — paske yon chanjman dirab kòmanse ak yon kominote ki enfòme e ini.
-          </h2>
-          <div class="btn-group">
-            <a href="#about" class="btn btn-primary" data-i18n="hero_btn">Aprann Plis</a>
+        <div class="hero-content">
+          <div class="hero-left">
+            <div class="hero-eyebrow reveal">UPPCH — Est. 2025</div>
+            <h1 class="hero-headline reveal reveal-delay-1">
+              <span data-i18n="hero_p1">The People of Haiti</span><br />
+              <em data-i18n="hero_span">Deserve Better</em>
+            </h1>
+            <p class="hero-subhead reveal reveal-delay-2" data-i18n="hero_p2">Deserve A</p>
+            <p class="hero-body reveal reveal-delay-2" data-i18n="hero_h2">
+              Together we organize, advocate, and act — because lasting change starts with an informed and united community.
+            </p>
+            <a href="#about" class="hero-cta reveal reveal-delay-3" data-i18n="hero_btn">
+              Learn More <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
-        </div>
-        <div class="hero-right-arrow">
-          <a href=""><i class="fa-solid fa-chevron-right"></i></a>
+
+          <div class="hero-right reveal reveal-delay-1">
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="hero_stat_year">2025</div>
+              <div class="hero-stat-label"  data-i18n="hero_stat_year_label">Year Founded</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="hero_stat_langs">3</div>
+              <div class="hero-stat-label"  data-i18n="hero_stat_langs_label">Languages Supported</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="hero_stat_members">100+</div>
+              <div class="hero-stat-label"  data-i18n="hero_stat_members_label">Active Members</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-i18n="hero_stat_inf">∞</div>
+              <div class="hero-stat-label"  data-i18n="hero_stat_inf_label">Commitment to Change</div>
+            </div>
+            <div class="hero-stat large">
+              <div class="hero-stat-number" data-i18n="hero_stat_motto">Unity · Justice · Progress</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- About Section -->
+      <!-- ═══ ABOUT ═══ -->
       <section id="about" class="about-section">
-        <div class="container about-card-container">
-
-          <div class="about-card-left">
-            <h2 data-i18n="about_left_h2">KI NOU YE</h2>
-            <p><strong data-i18n="about_left_p1">UPPCH se yon mouvman sivik ki baze sou kwayans ke chak Ayisyen — isit ak nan dyaspora — gen dwa patisipe nan fòme avni peyi yo.</strong></p>
-            <p data-i18n="about_left_p2">Nou se yon òganizasyon sosyal ak politik ki angaje nan defann dwa, diyite, ak pwogrè pèp Ayisyen an. Atravè òganizasyon kominotè, edikasyon sivik, ak aksyon dirèk, nou travay pou rezoud defi sistèm yo ak kominote yo anndan peyi a ak aletranje.</p>
-            <p data-i18n="about_left_p3">Travay nou a baze sou solidarite. Depi defans politik rive nan mobilizasyon popilè, UPPCH mobilize moun pou pouse refòm ak resous ke kominote yo bezwen de toute ijans.</p>
-            <button class="about-read-btn" data-i18n="about_btn">Li Plis</button>
+        <div class="about-inner">
+          <div class="about-left reveal">
+            <div class="about-label" data-i18n="about_left_h2">ABOUT UPPCH</div>
+            <h2 class="about-headline">
+              <em data-i18n="about_right_h2">Organizing Since 2025</em> —<br />
+              <span data-i18n="about_right_p">A Stronger Haiti</span>
+            </h2>
+            <p class="about-body">
+              <strong data-i18n="about_left_p1">UPPCH is a civic movement built on the belief that every Haitian — at home and in the diaspora — has a right to participate in shaping their country's future.</strong>
+            </p>
+            <p class="about-body" data-i18n="about_left_p2">
+              We are a social and political organization committed to advocating for the rights, dignity, and progress of the Haitian people. Through community organizing, civic education, and direct action, we work to address the systemic challenges facing Haiti and its communities abroad.
+            </p>
+            <p class="about-body" data-i18n="about_left_p3" style="display:none">
+              Our work is grounded in solidarity. From political advocacy to grassroots outreach, UPPCH mobilizes people to push for the reforms and resources that communities in Haiti urgently need.
+            </p>
+            <button class="about-read-btn" data-i18n="about_btn">Read More</button>
           </div>
 
-          <div class="about-card-right">
-            <h2 data-i18n="about_right_h2">ÒGANIZE DEPI 2010</h2>
-            <p><strong data-i18n="about_right_p">Yon Ayiti pi fò kòmanse ak yon pèp ki òganize, kapab, ak angaje sivikman.</strong></p>
-            <div class="custom-video-wrapper">
-              <video id="aboutVideo" width="100%" preload="metadata" poster="black.jpg">
-                <source src="assets/videos/event.mp4" type="video/mp4" />
-              </video>
-              <div class="custom-play-button" id="playButton"></div>
+          <div class="about-right reveal reveal-delay-2">
+            <div class="about-video-card">
+              <div class="custom-video-wrapper">
+                <video id="aboutVideo" width="100%" preload="metadata">
+                  <source src="assets/videos/event.mp4" type="video/mp4" />
+                </video>
+                <div class="custom-play-button" id="playButton"></div>
+              </div>
+            </div>
+            <div class="about-right-label">
+              <h3 data-i18n="about_right_h2">ORGANIZING SINCE 2025</h3>
+              <p data-i18n="about_right_p">A stronger Haiti begins with an organized, empowered, and civically engaged people.</p>
             </div>
           </div>
-
         </div>
       </section>
 
-      <!-- Picture Frame -->
+      <!-- ═══ PHOTO SWIPER ═══ -->
       <section id="picture-frame" class="picture-frame-section">
-        <div class="container picture-frame-container">
-          <div class="frame-box">
-            <img src="assets/images/photo-bike.jpeg" alt="Community outreach" />
+        <div class="swiper heroSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/images/photo-bike.jpeg"       alt="Community outreach" /></div>
+            <div class="swiper-slide"><img src="assets/images/group-Photo.jpeg"      alt="UPPCH members" /></div>
+            <div class="swiper-slide"><img src="assets/images/group-Photo-Side.jpeg" alt="Community gathering" /></div>
+            <div class="swiper-slide"><img src="assets/images/event-dance.jpeg"      alt="Event" /></div>
+            <div class="swiper-slide"><img src="assets/images/back.jpeg"             alt="Event" /></div>
           </div>
-          <div class="frame-box">
-            <img src="assets/images/group-Photo.jpeg" alt="UPPCH members" />
-          </div>
-          <div class="frame-box">
-            <img src="assets/images/group-Photo-Side.jpeg" alt="Community gathering" />
-          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </section>
 
-      <!-- Mission Section -->
+      <!-- ═══ MISSION ═══ -->
       <section id="mission" class="mission-section">
-        <div class="container mission-card-container">
-
-          <div class="mission-card-left">
-            <h2 data-i18n="mission_left_h2">Vin Yon Manm Aktif Jodi a</h2>
-            <p data-i18n="mission_left_p1">Chanjman sivik egzije patisipasyon sivik — UPPCH la pou ba chak manm kominote nou an yon plas nan tab la.</p>
-            <p data-i18n="mission_left_p2">Nou ap aktèlman bati pwogram manm nou an pou ba moun dedye yo zouti ak platfòm pou fè yon diferans reyèl. Ret konekte.</p>
-            <button class="mission-read-btn" data-i18n="mission_btn">Li Plis</button>
+        <div class="mission-inner">
+          <div class="mission-card-left reveal">
+            <h2 data-i18n="mission_left_h2">Become An Active Member Today</h2>
+            <p data-i18n="mission_left_p1">Civic change requires civic participation — UPPCH is here to give every member of our community a seat at the table.</p>
+            <p data-i18n="mission_left_p2">We are actively building our membership program to give dedicated individuals the tools and platform to make a real difference. Stay connected.</p>
+            <button class="mission-read-btn" data-i18n="mission_btn">Read More</button>
           </div>
-
-          <div class="mission-card-right">
-            <h2 data-i18n="mission_right_h2">MISYON NOU</h2>
-            <h3 data-i18n="mission_right_h3">Konstwi yon Ayiti Pi Fò, Ini Ansanm</h3>
+          <div class="mission-card-right reveal reveal-delay-2">
+            <h2 data-i18n="mission_right_h2">OUR MISSION</h2>
+            <h3 data-i18n="mission_right_h3">Building a Stronger, United Haiti Together</h3>
             <div class="mission-tabs">
-              <span class="active" data-i18n="mission_tab1">MISYON NOU</span>
-              <span data-i18n="mission_tab2">VIZYON NOU</span>
-              <span data-i18n="mission_tab3">OBJEKTIF NOU</span>
+              <span class="active" data-i18n="mission_tab1">OUR MISSION</span>
+              <span data-i18n="mission_tab2">OUR VISION</span>
+              <span data-i18n="mission_tab3">OUR GOALS</span>
             </div>
-            <p data-i18n="mission_text_mission">UPPCH se yon òganizasyon sosyal ak politik ki dedye a inite kominote Ayisyen an otou valè jistis, pwogrè, ak detèminasyon pwòp tèt. Atravè angajman sivik, òganizasyon kominotè, ak defans, nou travay pou kreye yon chanjman reyèl ak dirab ann Ayiti ak nan kominote Ayisyen toupatou nan mond lan.</p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Latest Events Section -->
-      <section id="latest-events" class="latest-events-section">
-        <div class="latest-events-grid">
-          <div class="arrow arrow-left">
-            <i class="fa-solid fa-chevron-left"></i>
-          </div>
-
-          <div class="latest-events-container">
-            <h2 data-i18n="events_h2">Dènye Evènman</h2>
-            <p data-i18n="events_p">Rasanbleman kominotè, kanpay defans, ak aksyon sivil òganize pa UPPCH</p>
-
-            <div class="event-cards">
-
-              <div class="event-card">
-                <div class="image-placeholder">
-                  <img src="assets/images/group-Photo.jpeg" alt="Community event" />
-                </div>
-                <div class="event-info">
-                  <small data-i18n="event1_author">Pa Nicolas Cherubin • 7 Jiyè 2025</small>
-                  <h3 data-i18n="event1_title">Fowòm Defans Kominotè</h3>
-                  <p data-i18n="event1_desc">Manm yo te rasanble pou diskite defi politik ak sosyal kle ki fè fas ak Ayiti ak dyaspora a.</p>
-                  <a href="event-details.html" data-i18n="read_more">Li Plis →</a>
-                </div>
-              </div>
-
-              <div class="event-card">
-                <div class="image-placeholder"></div>
-                <div class="event-info">
-                  <small data-i18n="event2_author">Pa Nicolas Cherubin • 7 Sep 2012</small>
-                  <h3 data-i18n="event2_title">Rali Mobilizasyon Sivik</h3>
-                  <p data-i18n="event2_desc">Yon jounen òganizasyon kominotè, edikasyon votè, ak angajman nan baz la.</p>
-                  <a href="event-details2.html" data-i18n="read_more">Li Plis →</a>
-                </div>
-              </div>
-
-              <div class="event-card">
-                <div class="image-placeholder"></div>
-                <div class="event-info">
-                  <small data-i18n="event3_author">Pa Nicolas Cherubin • 7 Sep 2012</small>
-                  <h3 data-i18n="event3_title">Panel Diskisyon sou Politik</h3>
-                  <p data-i18n="event3_desc">Lidè UPPCH ak manm kominote yo te abòde priyorite refòm ak objektif òganizasyon an.</p>
-                  <a href="#" data-i18n="read_more">Li Plis →</a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="arrow arrow-right">
-            <i class="fa-solid fa-chevron-right"></i>
+            <p id="missionText">UPPCH is a social and political organization dedicated to uniting the Haitian community around shared values of justice, progress, and self-determination. Through civic engagement, community organizing, and advocacy, we work to create meaningful and lasting change in Haiti and in Haitian communities worldwide.</p>
           </div>
         </div>
       </section>
 
-      <!-- Events Timeline -->
-      <section id="events-tl" class="events-section">
+      <!-- ═══ STATUTES SUMMARY ═══ -->
+      <section id="statutes" class="statutes-summary-section">
         <div class="container">
-          <!-- Timeline content goes here -->
+          <div class="statutes-summary-header">
+            <h2 data-i18n="statutes_section_h2">Statutes &amp; Declaration of Principles</h2>
+            <p data-i18n="statutes_section_p">UPPCH is governed by a formal constitution built on democracy, transparency, and social justice. Discover our fundamental values, party structure, and commitment to the Haitian people.</p>
+          </div>
+          <div class="statutes-summary-cards">
+            <div class="statutes-card">
+              <div class="statutes-card-icon"><i class="fa-solid fa-scroll"></i></div>
+              <h3 data-i18n="statutes_card1_h">Declaration of Principles</h3>
+              <p data-i18n="statutes_card1_p">Founded in 2025, UPPCH is built on four pillars: Youth, Diaspora, Haitian Women, and Farmers — united for a more just and prosperous Haiti.</p>
+            </div>
+            <div class="statutes-card">
+              <div class="statutes-card-icon"><i class="fa-solid fa-sitemap"></i></div>
+              <h3 data-i18n="statutes_card2_h">Democratic Structure</h3>
+              <p data-i18n="statutes_card2_p">The Congress, National Council, and National Directorate — a three-tier system ensuring every voice in the party is represented.</p>
+            </div>
+            <div class="statutes-card">
+              <div class="statutes-card-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <h3 data-i18n="statutes_card3_h">Member Rights &amp; Duties</h3>
+              <p data-i18n="statutes_card3_p">Every member has the right to vote, run for office, and participate. Every member has the duty to respect the statutes and contribute to the party's growth.</p>
+            </div>
+          </div>
+          <div class="statutes-summary-cta">
+            <a href="statutes.html" data-i18n="statutes_read_btn">Read the Full Statutes</a>
+          </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact-section">
-        <div class="contact-card">
-          <div class="contact-left">
-            <h2 data-i18n="contact_h2">Kontakte Nou</h2>
-            <p data-i18n="contact_p">Kontakte nou e yon manm ekip nou an ap reponn ou pi vit posib.</p>
-            <form class="contact-form">
-              <input type="text"  data-i18n-placeholder="contact_name"    placeholder="Non"   required />
-              <input type="email" data-i18n-placeholder="contact_email"   placeholder="Imèl"  required />
-              <textarea           data-i18n-placeholder="contact_message" placeholder="Mesaj" rows="4" required></textarea>
-              <button type="submit" data-i18n="contact_send">Voye</button>
-            </form>
+      <!-- ═══ EVENTS ═══ -->
+      <section id="latest-events" class="latest-events-section">
+        <div class="events-header reveal">
+          <div class="events-header-left">
+            <div class="events-label">UPPCH</div>
+            <h2 class="events-headline" data-i18n="events_h2">Latest Events</h2>
           </div>
-
-          <div class="contact-right">
-            <p><strong data-i18n="contact_visit">Vizite Nou</strong><br />65 Country Club Rd, New Jersey</p>
-            <p><strong data-i18n="contact_call">Rele Nou</strong><br />732-337-5065</p>
-            <p><strong data-i18n="contact_email_label">Imèl Nou</strong><br />UppchOrg@gmail.com</p>
-            <p><strong data-i18n="contact_follow">Swiv Nou</strong></p>
-            <div class="social-icons">
-              <i class="fa-solid fa-envelope"></i>
-              <i class="fa-brands fa-facebook"></i>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-tiktok"></i>
-              <i class="fa-brands fa-x-twitter"></i>
+          <div class="events-header-right">
+            <p data-i18n="events_p">Community gatherings, advocacy campaigns, and civic actions organized by UPPCH</p>
+          </div>
+        </div>
+        <div class="event-cards">
+          <div class="event-card reveal">
+            <div class="image-placeholder">
+              <img src="assets/images/group-Photo.jpeg" alt="Community event" />
             </div>
+            <div class="event-info">
+              <small data-i18n="event1_author">By Nicolas Cherubin • July 7, 2025</small>
+              <h3 data-i18n="event1_title">Community Advocacy Forum</h3>
+              <p data-i18n="event1_desc">Members gathered to discuss key political and social challenges facing Haiti and the diaspora.</p>
+              <a href="event-details.html" data-i18n="read_more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="event-card reveal reveal-delay-1">
+            <div class="image-placeholder"></div>
+            <div class="event-info">
+              <small data-i18n="event2_author">By Nicolas Cherubin • Sep 7, 2025</small>
+              <h3 data-i18n="event2_title">Civic Outreach Rally</h3>
+              <p data-i18n="event2_desc">A day of community organizing, voter education, and grassroots engagement.</p>
+              <a href="event-details2.html" data-i18n="read_more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="event-card reveal reveal-delay-2">
+            <div class="image-placeholder"></div>
+            <div class="event-info">
+              <small data-i18n="event3_author">By Nicolas Cherubin • Sep 7, 2025</small>
+              <h3 data-i18n="event3_title">Policy Discussion Panel</h3>
+              <p data-i18n="event3_desc">UPPCH leaders and community members addressed reform priorities and organizational goals.</p>
+              <a href="#" data-i18n="read_more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ EVENTS TIMELINE / CALENDAR ═══ -->
+      <section id="events-tl" class="events-section">
+        <div class="cal-wrapper">
+          <div class="cal-header">
+            <h2 data-i18n="timeline_h2">Events History</h2>
+            <p data-i18n="timeline_subtitle">A look at the events that have shaped UPPCH.</p>
+          </div>
+          <div class="cal-grid">
+
+            <!-- July 7 2025 — real event -->
+            <div class="cal-card real">
+              <div class="cal-date-badge">
+                <span class="cal-month">Jul</span>
+                <span class="cal-day">7</span>
+                <span class="cal-year">2025</span>
+              </div>
+              <div class="cal-card-body">
+                <span class="cal-tag" data-i18n="event1_title">Community Advocacy Forum</span>
+                <p data-i18n="event1_desc">Members gathered to discuss key political and social challenges facing Haiti and the diaspora.</p>
+                <a href="event-details.html" data-i18n="read_more">Read More →</a>
+              </div>
+            </div>
+
+            <!-- Sep 7 2025 — real event -->
+            <div class="cal-card real">
+              <div class="cal-date-badge">
+                <span class="cal-month">Sep</span>
+                <span class="cal-day">7</span>
+                <span class="cal-year">2025</span>
+              </div>
+              <div class="cal-card-body">
+                <span class="cal-tag" data-i18n="event2_title">Civic Outreach Rally</span>
+                <p data-i18n="event2_desc">A day of community organizing, voter education, and grassroots engagement.</p>
+                <a href="event-details2.html" data-i18n="read_more">Read More →</a>
+              </div>
+            </div>
+
+            <!-- Placeholder 1 -->
+            <div class="cal-card placeholder">
+              <div class="cal-date-badge upcoming">
+                <span class="cal-month">TBD</span>
+                <span class="cal-day">—</span>
+                <span class="cal-year">2026</span>
+              </div>
+              <div class="cal-card-body">
+                <span class="cal-tag upcoming" data-i18n="cal_upcoming">Upcoming</span>
+                <p data-i18n="cal_placeholder_desc">Stay connected for upcoming UPPCH events and activities.</p>
+              </div>
+            </div>
+
+            <!-- Placeholder 2 -->
+            <div class="cal-card placeholder">
+              <div class="cal-date-badge upcoming">
+                <span class="cal-month">TBD</span>
+                <span class="cal-day">—</span>
+                <span class="cal-year">2026</span>
+              </div>
+              <div class="cal-card-body">
+                <span class="cal-tag upcoming" data-i18n="cal_upcoming">Upcoming</span>
+                <p data-i18n="cal_placeholder_desc">Stay connected for upcoming UPPCH events and activities.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ CONTACT ═══ -->
+      <section id="contact" class="contact-section">
+        <div class="contact-inner">
+          <div class="contact-left-wrap reveal">
+            <div class="contact-eyebrow" data-i18n="footer_contact">Contact Us</div>
+            <h2 data-i18n="contact_h2">Contact Us</h2>
+            <p data-i18n="contact_p">Reach out and a member of our team will get back to you as soon as possible.</p>
+            <div class="contact-info-items">
+              <div class="contact-info-item">
+                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="text">
+                  <strong data-i18n="contact_visit">Visit Us</strong>
+                  <span data-i18n="nav_address">65 Country Club Rd, New Jersey</span>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="text">
+                  <strong data-i18n="contact_call">Call Us</strong>
+                  <a href="tel:7323375065">732-337-5065</a>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="text">
+                  <strong data-i18n="contact_email_label">Email Us</strong>
+                  <a href="/cdn-cgi/l/email-protection#14416464777c5b6673547379757d783a777b79"><span class="__cf_email__" data-cfemail="7d280d0d1e15320f1a3d1a101c1411531e1210">[email&#160;protected]</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-social">
+              <a href="https://www.facebook.com/UppchOrg"  target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/UppchOrg" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@UppchOrg"   target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="https://x.com/UppchOrg"             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://youtube.com/@UppchOrg"      target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="contact-form-wrap reveal reveal-delay-2">
+            <form class="contact-form">
+              <input type="text"  data-i18n-placeholder="contact_name"    placeholder="Name"    required />
+              <input type="email" data-i18n-placeholder="contact_email"   placeholder="Email"   required />
+              <textarea           data-i18n-placeholder="contact_message" placeholder="Message" rows="5" required></textarea>
+              <button type="submit" data-i18n="contact_send">Send</button>
+            </form>
           </div>
         </div>
       </section>
 
     </main>
 
-    <!-- Footer -->
+    <!-- ═══ FOOTER ═══ -->
     <footer class="site-footer">
       <div class="site-footer-container">
-
         <div class="footer-column column1">
-          <div class="footer-logo">
-            <img src="assets/logo.png" alt="UPPCH Logo" />
-          </div>
-          <p class="footer-description" data-i18n="footer_desc">UPPCH se yon òganizasyon sosyal ak politik ki angaje nan inite kominote Ayisyen an e defann jistis, pwogrè, ak chanjman dirab.</p>
-          <p class="footer-copyright" data-i18n="footer_copyright">© 2025 UPPCH. Tout dwa rezève.</p>
+          <div class="footer-logo"><img src="assets/logo.png" alt="UPPCH Logo" /></div>
+          <p class="footer-description" data-i18n="footer_desc">UPPCH is a social and political organization committed to uniting the Haitian community and advocating for justice, progress, and lasting change.</p>
+          <p class="footer-copyright" data-i18n="footer_copyright">© 2025 UPPCH. All rights reserved.</p>
         </div>
-
         <div class="footer-column column2">
-          <h2 data-i18n="footer_quick_links">Lyen Rapid</h2>
+          <h2 data-i18n="footer_quick_links">Quick Links</h2>
           <ul class="footer-links">
-            <li><a href="#home"          data-i18n="nav_home">Akèy</a></li>
-            <li><a href="#about"         data-i18n="nav_about">Ki Nou Ye</a></li>
-            <li><a href="#mission"       data-i18n="nav_mission">Misyon Nou</a></li>
-            <li><a href="#latest-events" data-i18n="nav_events">Dènye Evènman</a></li>
-            <li><a href="#events-tl"     data-i18n="nav_timeline">Istwa Evènman</a></li>
-            <li><a href="#contact"       data-i18n="nav_contact">Kontakte Nou</a></li>
+            <li><a href="#home"          data-i18n="nav_home">Home</a></li>
+            <li><a href="#about"         data-i18n="nav_about">About Us</a></li>
+            <li><a href="#mission"       data-i18n="nav_mission">Our Mission</a></li>
+            <li><a href="#latest-events" data-i18n="nav_events">Latest Events</a></li>
+            <li><a href="#events-tl"     data-i18n="nav_timeline">Events Timeline</a></li>
+            <li><a href="#contact"       data-i18n="nav_contact">Contact</a></li>
           </ul>
         </div>
-
         <div class="footer-column column3">
-          <h2 data-i18n="footer_other_pages">Lòt Paj</h2>
+          <h2 data-i18n="footer_other_pages">Other Pages</h2>
           <ul class="footer-links">
-            <li><a href="#" data-i18n="footer_privacy">Politik Konfidansyalite</a></li>
-            <li><a href="#" data-i18n="footer_terms">Tèm ak Kondisyon</a></li>
-            <li><a href="#" data-i18n="footer_membership">Manm</a></li>
+            <li><a href="statutes.html" data-i18n="nav_statutes">Statutes</a></li>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            <li><a href="#" data-i18n="footer_terms">Terms & Conditions</a></li>
+            <li><a href="#" data-i18n="footer_membership">Membership</a></li>
           </ul>
         </div>
-
         <div class="footer-column column4">
-          <h2 data-i18n="footer_contact">Kontakte Nou</h2>
+          <h2 data-i18n="footer_contact">Contact Us</h2>
           <div class="contact-item">
             <i class="fa-solid fa-location-dot"></i>
             <span data-i18n="nav_address">65 Country Club Rd, New Jersey</span>
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-square-phone"></i>
-            <a href="tel:7323375065">732-337-5065</a>
+            <a href="tel:7323375065">732            <a href="tel:7323375065">732-337-5065</a>
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-envelope"></i>
             <a href="mailto:UppchOrg@gmail.com">UppchOrg@gmail.com</a>
           </div>
         </div>
-
       </div>
     </footer>
-  </body>
+
+  <style>
+/* ── Calendar Section ── */
+.events-section { padding: 80px 1rem; background: #f4f4f4; }
+.cal-wrapper { max-width: 1100px; margin: 0 auto; }
+.cal-header { text-align: center; margin-bottom: 3rem; }
+.cal-header h2 { font-size: 2rem; font-weight: 800; color: #181818; text-transform: uppercase; letter-spacing: 1px; margin-bottom: .5rem; font-family: 'DM Sans', sans-serif; }
+.cal-header p { color: #666; font-size: 1rem; }
+.cal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.cal-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 14px rgba(0,0,0,.07); display: flex; flex-direction: column; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.cal-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.12); }
+.cal-card.placeholder { opacity: .65; }
+.cal-date-badge { background: #eb9b2d; color: #fff; padding: 18px 16px; text-align: center; min-width: 80px; }
+.cal-date-badge.upcoming { background: #aaa; }
+.cal-month { display: block; font-size: .75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: .85; }
+.cal-day { display: block; font-size: 2.6rem; font-weight: 900; line-height: 1; }
+.cal-year { display: block; font-size: .75rem; font-weight: 600; opacity: .8; margin-top: 2px; }
+.cal-card-body { padding: 1.2rem 1.4rem 1.4rem; flex: 1; display: flex; flex-direction: column; gap: .6rem; }
+.cal-tag { display: inline-block; background: #fff5e0; color: #b76e16; font-size: .75rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: .5px; align-self: flex-start; }
+.cal-tag.upcoming { background: #eee; color: #777; }
+.cal-card-body p { font-size: .88rem; color: #555; line-height: 1.65; margin: 0; flex: 1; }
+.cal-card-body a { font-size: .85rem; font-weight: 700; color: #eb9b2d; text-decoration: none; align-self: flex-start; }
+.cal-card-body a:hover { text-decoration: underline; }
+
+/* ── Statutes Summary ── */
+.statutes-summary-section { background: #fff; padding: 80px 1rem; }
+.statutes-summary-section .container { max-width: 1100px; margin: 0 auto; }
+.statutes-summary-header { text-align: center; margin-bottom: 3rem; }
+.statutes-summary-header h2 { font-size: 2rem; font-weight: 800; color: #181818; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; font-family: 'DM Sans', sans-serif; }
+.statutes-summary-header p { font-size: 1rem; color: #555; max-width: 650px; margin: 0 auto; line-height: 1.7; }
+.statutes-summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 2.5rem; }
+.statutes-card { background: #f9f9f9; border-radius: 10px; padding: 2rem 1.5rem; text-align: center; border-top: 4px solid #eb9b2d; box-shadow: 0 2px 12px rgba(0,0,0,.05); transition: transform .2s, box-shadow .2s; }
+.statutes-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.10); }
+.statutes-card-icon { width: 60px; height: 60px; background: #fff5e6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.statutes-card-icon i { font-size: 1.5rem; color: #eb9b2d; }
+.statutes-card h3 { font-size: 1.05rem; font-weight: 700; color: #181818; margin-bottom: .75rem; }
+.statutes-card p { font-size: .9rem; color: #555; line-height: 1.7; }
+.statutes-summary-cta { text-align: center; }
+.statutes-summary-cta a { display: inline-block; background: #eb9b2d; color: #fff; padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: .95rem; transition: background .2s; }
+.statutes-summary-cta a:hover { background: #b76e16; }
+</style>
+</body>
 </html>

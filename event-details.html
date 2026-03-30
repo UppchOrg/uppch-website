@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ht">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -18,13 +18,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/events-1-style.css" />
 
-    <!-- Load translations BEFORE page JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/events-1-main.js"></script>
   </head>
 
-  <!-- data-page tells events-1-main.js which key prefix to use for Read More/Less -->
   <body data-page="ed1">
 
     <!-- ===== HEADER ===== -->
@@ -34,8 +32,8 @@
         <!-- Top Bar -->
         <div class="nav-inner top">
           <div class="contact-group">
-            <a href="mailto:UppchOrg@gmail.com" class="contact-link">
-              <i class="fas fa-envelope"></i> UppchOrg@gmail.com
+            <a href="/cdn-cgi/l/email-protection#a7f2d7d7c4cfe8d5c0e7c0cac6cecb89c4c8ca" class="contact-link">
+              <i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="d88da8a8bbb097aabf98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span>
             </a>
             <a href="tel:+17323375065" class="contact-link">
               <i class="fas fa-phone-alt"></i> (732) 337-5065
@@ -59,19 +57,26 @@
         <!-- Bottom Bar -->
         <div class="nav-inner bottom">
           <nav class="nav-links desktop-nav">
-            <a href="index.html"                  data-i18n="nav_home">Akèy</a>
-            <a href="index.html#about"            data-i18n="nav_about">Ki Nou Ye</a>
-            <a href="index.html#mission"          data-i18n="nav_mission">Misyon Nou</a>
-            <a href="index.html#latest-events"    data-i18n="nav_events">Dènye Evènman</a>
-            <a href="index.html#events-tl"        data-i18n="nav_timeline">Istwa Evènman</a>
-            <a href="index.html#contact"          data-i18n="nav_contact">Kontakte Nou</a>
+            <a href="index.html"               data-i18n="nav_home">Akèy</a>
+            <a href="index.html#about"         data-i18n="nav_about">Ki Nou Ye</a>
+            <a href="index.html#mission"       data-i18n="nav_mission">Misyon Nou</a>
+            <a href="index.html#latest-events" data-i18n="nav_events">Dènye Evènman</a>
+            <a href="index.html#events-tl"     data-i18n="nav_timeline">Istwa Evènman</a>
+            <a href="statutes.html"            data-i18n="nav_statutes">Estati</a>
+            <a href="index.html#contact"       data-i18n="nav_contact">Kontakte Nou</a>
           </nav>
 
-          <!-- Language Switcher -->
-          <div class="lang-switcher">
-            <button class="lang-btn active" data-lang="ht" aria-label="Kreyòl Ayisyen">🇭🇹 Kreyòl</button>
-            <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
-            <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+          <!-- Language Dropdown -->
+          <div class="lang-dropdown-wrapper">
+            <button class="lang-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+              <span class="lang-label">English</span>
+              <span class="chevron">▼</span>
+            </button>
+            <div class="lang-dropdown-menu" role="menu">
+              <button class="lang-option" data-lang="ht" role="menuitem">Kreyòl</button>
+              <button class="lang-option active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-option" data-lang="fr" role="menuitem">Français</button>
+            </div>
           </div>
 
           <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -87,9 +92,7 @@
             <img src="assets/logo.png" alt="UPPCH Logo" class="logo" />
             <h1>UPPCH</h1>
           </div>
-          <button class="close-btn" id="closeBtn" aria-label="Close menu">
-            <i class="fas fa-times"></i>
-          </button>
+          <button class="close-btn" id="closeBtn" aria-label="Close menu"><i class="fas fa-times"></i></button>
         </div>
         <nav class="mobile-nav-links">
           <a href="index.html"               data-i18n="nav_home">Akèy</a>
@@ -97,12 +100,20 @@
           <a href="index.html#mission"       data-i18n="nav_mission">Misyon Nou</a>
           <a href="index.html#latest-events" data-i18n="nav_events">Dènye Evènman</a>
           <a href="index.html#events-tl"     data-i18n="nav_timeline">Istwa Evènman</a>
+          <a href="statutes.html"            data-i18n="nav_statutes">Estati</a>
           <a href="index.html#contact"       data-i18n="nav_contact">Kontakte Nou</a>
-          <!-- Mobile lang switcher -->
-          <div class="lang-switcher mobile-lang">
-            <button class="lang-btn active" data-lang="ht">🇭🇹 Kreyòl</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="fr">FR</button>
+
+          <!-- Mobile Language Dropdown -->
+          <div class="mobile-lang-wrapper">
+            <button class="lang-dropdown-btn" aria-haspopup="true">
+              <span class="lang-label">English</span>
+              <span class="chevron">▼</span>
+            </button>
+            <div class="lang-dropdown-menu" role="menu">
+              <button class="lang-option" data-lang="ht">Kreyòl</button>
+              <button class="lang-option" data-lang="en">🇺🇸 English</button>
+              <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+            </div>
           </div>
         </nav>
       </div>
@@ -189,6 +200,7 @@
         <div class="footer-column column3">
           <h2 data-i18n="footer_other_pages">Lòt Paj</h2>
           <ul class="footer-links">
+            <li><a href="statutes.html" data-i18n="nav_statutes">Estati</a></li>
             <li><a href="#" data-i18n="footer_privacy">Politik Konfidansyalite</a></li>
             <li><a href="#" data-i18n="footer_terms">Tèm ak Kondisyon</a></li>
             <li><a href="#" data-i18n="footer_membership">Manm</a></li>
@@ -206,12 +218,4 @@
           </div>
           <div class="contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <a href="mailto:UppchOrg@gmail.com">UppchOrg@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="js/blog-swiper.js"></script>
-  </body>
-</html>
+            <a href="/cdn-cgi/l/email-protection#c095b0b0a3a88

@@ -2,11 +2,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ============================================
   // i18n — Language Detection & Switching
-  // (mirrors main.js — shared translations.js)
   // ============================================
 
   const SUPPORTED_LANGS = ['ht', 'en', 'fr'];
-  const DEFAULT_LANG = 'ht';
+  const DEFAULT_LANG = 'en';
+
+  const LANG_LABELS = {
+    ht: 'Kreyòl',
+    en: 'English',
+    fr: 'Français',
+  };
 
   function detectLanguage() {
     const saved = localStorage.getItem('uppch_lang');
@@ -40,24 +45,76 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    document.querySelectorAll('.lang-btn').forEach(function (btn) {
-      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    // Update all dropdown buttons to show active lang label
+    document.querySelectorAll('.lang-dropdown-btn').forEach(function (btn) {
+      const labelSpan = btn.querySelector('.lang-label');
+      if (labelSpan) labelSpan.textContent = LANG_LABELS[lang] || lang;
+    });
+
+    // Update active state on options
+    document.querySelectorAll('.lang-option').forEach(function (opt) {
+      opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
     });
   }
 
   function setLanguage(lang) {
     localStorage.setItem('uppch_lang', lang);
     applyLanguage(lang);
+    // Close all dropdowns
+    document.querySelectorAll('.lang-dropdown-menu').forEach(m => m.classList.remove('open'));
+    document.querySelectorAll('.lang-dropdown-btn').forEach(b => b.classList.remove('open'));
   }
 
-  document.querySelectorAll('.lang-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      setLanguage(this.getAttribute('data-lang'));
-    });
-  });
+  // Build dropdown functionality
+  function initLangDropdowns() {
+    const currentLang = detectLanguage();
 
-  const currentLang = detectLanguage();
-  applyLanguage(currentLang);
+    document.querySelectorAll('.lang-dropdown-wrapper, .mobile-lang-wrapper').forEach(function (wrapper) {
+      const btn = wrapper.querySelector('.lang-dropdown-btn');
+      const menu = wrapper.querySelector('.lang-dropdown-menu');
+      if (!btn || !menu) return;
+
+      // Populate options if empty (in case HTML is minimal)
+      if (!menu.children.length) {
+        SUPPORTED_LANGS.forEach(function (lang) {
+          const opt = document.createElement('button');
+          opt.className = 'lang-option' + (lang === currentLang ? ' active' : '');
+          opt.setAttribute('data-lang', lang);
+          opt.textContent = LANG_LABELS[lang];
+          menu.appendChild(opt);
+        });
+      }
+
+      // Toggle dropdown
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = menu.classList.contains('open');
+        // Close all others first
+        document.querySelectorAll('.lang-dropdown-menu').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('.lang-dropdown-btn').forEach(b => b.classList.remove('open'));
+        if (!isOpen) {
+          menu.classList.add('open');
+          btn.classList.add('open');
+        }
+      });
+
+      // Option click
+      menu.querySelectorAll('.lang-option').forEach(function (opt) {
+        opt.addEventListener('click', function () {
+          setLanguage(this.getAttribute('data-lang'));
+        });
+      });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.lang-dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.lang-dropdown-btn').forEach(b => b.classList.remove('open'));
+    });
+  }
+
+  initLangDropdowns();
+  applyLanguage(detectLanguage());
 
 
   // ============================================
@@ -76,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Close mobile menu on nav link click
   document.querySelectorAll('.mobile-nav-links a').forEach(function (link) {
     link.addEventListener('click', function () {
       if (mobileMenu) mobileMenu.classList.remove('active');
@@ -95,16 +151,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const isHidden = moreText.classList.contains('hidden');
       moreText.classList.toggle('hidden', !isHidden);
 
-      // Determine which page we're on by checking the data-page attribute on body
       const page = document.body.getAttribute('data-page') || 'ed1';
       const lang = localStorage.getItem('uppch_lang') || detectLanguage();
       const t = translations[lang];
-      const lessKey = page + '_read_less';
-      const moreKey = page + '_read_more';
-
-      readMoreBtn.textContent = isHidden
-        ? (t[lessKey] || 'Read Less')
-        : (t[moreKey] || 'Read More');
+      const key = isHidden ? page + '_read_less' : page + '_read_more';
+      readMoreBtn.textContent = t[key] || (isHidden ? 'Read Less' : 'Read More');
     });
   }
 
@@ -118,9 +169,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const video = document.querySelector('.event-video');
 
   function playVideo() {
-    if (playButton && thumbnail && video) {
-      playButton.style.opacity = '0';
-      thumbnail.style.display = 'none';
+    if (thumbnail) thumbnail.style.display = 'none';
+    if (playButton) playButton.style.display = 'none';
+    if (video) {
       video.style.display = 'block';
       video.play();
     }
@@ -131,6 +182,8 @@ document.addEventListener('DOMContentLoaded', function () {
     watchVidBtn.addEventListener('click', function (e) {
       e.preventDefault();
       playVideo();
+      const target = document.querySelector('.video-placeholder, .video-placeholder2');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   }
 

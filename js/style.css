@@ -732,42 +732,49 @@ main { padding-top: var(--header-h); }
 }
 
 /* ══════════════════════════════════════════
-   PHOTO GRID
+   PHOTO SWIPER
 ══════════════════════════════════════════ */
 .picture-frame-section {
   padding: 0;
   background: var(--green);
-}
-
-.picture-frame-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-}
-
-.frame-box {
-  aspect-ratio: 4/3;
   overflow: hidden;
-  position: relative;
 }
 
-.frame-box::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(15,35,24,0.5) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity 0.3s;
+.picture-frame-section .swiper {
+  width: 100%;
+  height: 480px;
 }
-.frame-box:hover::after { opacity: 1; }
 
-.frame-box img {
+.picture-frame-section .swiper-slide {
+  overflow: hidden;
+}
+
+.picture-frame-section .swiper-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.6s var(--ease-out);
+  -webkit-user-drag: none;
+  user-select: none;
 }
-.frame-box:hover img { transform: scale(1.06); }
+
+.picture-frame-section .swiper-slide:hover img {
+  transform: scale(1.04);
+}
+
+.picture-frame-section .swiper-button-prev,
+.picture-frame-section .swiper-button-next {
+  color: var(--amber);
+}
+
+.picture-frame-section .swiper-pagination-bullet {
+  background: rgba(255,255,255,0.5);
+  opacity: 1;
+}
+.picture-frame-section .swiper-pagination-bullet-active {
+  background: var(--amber);
+}
 
 /* ══════════════════════════════════════════
    MISSION SECTION
@@ -1316,4 +1323,52 @@ main { padding-top: var(--header-h); }
   .hero-headline { font-size: 2rem; }
   .mission-tabs span { font-size: 0.72rem; padding: 0.6rem 0.75rem; }
   .contact-form-wrap { padding: 1.5rem; }
+}
+
+/* Mobile nav close button */
+.mobile-nav-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: var(--gray-mid);
+  font-size: 1.3rem;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.mobile-nav-close:hover { color: var(--green); }
+
+/* Mobile lang pills — simple inline buttons, no nested dropdown */
+.mobile-lang-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: 0.75rem;
+}
+
+.mobile-lang-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mobile-lang-btn {
+  background: transparent;
+  border: 1.5px solid var(--gray-light);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.mobile-lang-btn:hover { border-color: var(--amber); color: var(--amber-dark); }
+.mobile-lang-btn.active { background: var(--green); color: var(--white); border-color: var(--green); }
+
+@media (max-width: 600px) {
+  .picture-frame-section .swiper { height: 260px; }
 }
