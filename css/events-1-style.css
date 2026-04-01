@@ -593,6 +593,63 @@ body {
 }
 
 /* ==============================
+   Picture Frame / Hero Swiper Section
+   ============================== */
+.picture-frame-section {
+  width: 100%;
+  background-color: #1c2e28;
+  padding: 3rem 0;
+  overflow: hidden;
+}
+
+.picture-frame-section .heroSwiper {
+  width: 100%;
+  max-width: 1200px;
+  height: 520px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.picture-frame-section .swiper-slide {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.picture-frame-section .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+.picture-frame-section .swiper-button-prev,
+.picture-frame-section .swiper-button-next {
+  color: var(--limeGreen);
+}
+
+.picture-frame-section .swiper-pagination-bullet-active {
+  background: var(--limeGreen);
+}
+
+@media (max-width: 768px) {
+  .picture-frame-section {
+    padding: 2rem 0;
+  }
+
+  .picture-frame-section .heroSwiper {
+    height: 260px;
+    border-radius: 0;
+  }
+
+  .picture-frame-section .swiper-slide,
+  .picture-frame-section .swiper-slide img {
+    border-radius: 0;
+  }
+}
+
+/* ==============================
    Blog Swiper Section
    ============================== */
 .blog-swiper {
@@ -747,6 +804,25 @@ body {
 
 .contact-item a:hover {
   color: var(--orange);
+}
+
+.social-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.social-footer .social-icon {
+  background-color: #2a2a2a;
+  color: #ccc;
+  border: 1px solid #333;
+}
+
+.social-footer .social-icon:hover {
+  background-color: var(--orange);
+  color: #000;
+  border-color: var(--orange);
 }
 
 /* ==============================

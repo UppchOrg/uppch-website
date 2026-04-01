@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const blogSwiper = new Swiper('.blogSwiper', {
+  // Hero / picture-frame swiper — class matches the HTML element: "heroSwiper"
+  const heroSwiper = new Swiper('.heroSwiper', {
     loop: true,
-    spaceBetween: 16,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    centeredSlides: true,
+    speed: 700,
     autoplay: {
-      delay: 3000,
+      delay: 3500,
       disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.heroSwiper .swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0:    { slidesPerView: 1 },
-      640:  { slidesPerView: 2, spaceBetween: 16 },
-      1024: { slidesPerView: 3, spaceBetween: 20 },
+      nextEl: '.heroSwiper .swiper-button-next',
+      prevEl: '.heroSwiper .swiper-button-prev',
     },
   });
 });

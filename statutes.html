@@ -6,8 +6,14 @@
     <title>UPPCH — Statuts / Statutes / Estati</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
@@ -24,7 +30,7 @@
         font-weight: 800;
         color: var(--orange);
         margin-bottom: 0.5rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         text-transform: uppercase;
         letter-spacing: 2px;
       }
@@ -66,7 +72,7 @@
         padding: 6px 14px;
         border-radius: 20px;
         cursor: pointer;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         transition: all 0.2s ease;
       }
       .chapter-nav button:hover,
@@ -77,8 +83,12 @@
       }
 
       /* Chapter panels */
-      .chapter-panel { display: none; }
-      .chapter-panel.active { display: block; }
+      .chapter-panel {
+        display: none;
+      }
+      .chapter-panel.active {
+        display: block;
+      }
 
       /* Section styling */
       .statute-section {
@@ -88,7 +98,7 @@
         font-size: 1.3rem;
         font-weight: 700;
         color: var(--orange);
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         text-transform: uppercase;
         letter-spacing: 1px;
         border-left: 4px solid var(--orange);
@@ -265,16 +275,21 @@
         margin-top: 2rem;
         transition: background 0.3s;
       }
-      .back-btn:hover { background: var(--orangeDarker); }
+      .back-btn:hover {
+        background: var(--orangeDarker);
+      }
 
       @media (max-width: 600px) {
-        .statutes-hero h1 { font-size: 1.6rem; }
-        .statute-section h2 { font-size: 1.1rem; }
+        .statutes-hero h1 {
+          font-size: 1.6rem;
+        }
+        .statute-section h2 {
+          font-size: 1.1rem;
+        }
       }
     </style>
   </head>
   <body>
-
     <!-- ── HEADER — matches index.html exactly ── -->
     <header class="header">
       <div class="top-nav">
@@ -284,13 +299,48 @@
             <span data-i18n="nav_address">65 Country Club Rd, New Jersey</span>
           </div>
           <div class="right-text">
-            <a href="tel:7323375065"><i class="fa-solid fa-square-phone"></i> 732-337-5065</a>
-            <a href="mailto:UppchOrg@gmail.com"><i class="fa-solid fa-envelope"></i> UppchOrg@gmail.com</a>
-            <a href="https://www.facebook.com/UppchOrg"  target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/UppchOrg" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@UppchOrg"   target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://x.com/UppchOrg"             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://youtube.com/@UppchOrg"      target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+            <a href="tel:7323375065"
+              ><i class="fa-solid fa-square-phone"></i> 732-337-5065</a
+            >
+            <a
+              href="/cdn-cgi/l/email-protection#287d58584b40675a4f684f45494144064b4745"
+              ><i class="fa-solid fa-envelope"></i>
+              <span
+                class="__cf_email__"
+                data-cfemail="c396b3b3a0ab8cb1a483a4aea2aaafeda0acae"
+                >[email&#160;protected]</span
+              ></a
+            >
+            <a
+              href="https://www.facebook.com/UppchOrg"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/UppchOrg"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@UppchOrg"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+            <a
+              href="https://x.com/UppchOrg"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://youtube.com/@UppchOrg"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -304,23 +354,38 @@
             </div>
           </div>
           <nav class="desktop-links">
-            <a href="index.html"               data-i18n="nav_home">Home</a>
-            <a href="index.html#about"         data-i18n="nav_about">About Us</a>
-            <a href="index.html#mission"       data-i18n="nav_mission">Our Mission</a>
-            <a href="index.html#latest-events" data-i18n="nav_events">Latest Events</a>
-            <a href="index.html#events-tl"     data-i18n="nav_timeline">Events Timeline</a>
-            <a href="statutes.html"            data-i18n="nav_statutes">Statutes</a>
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="index.html#about" data-i18n="nav_about">About Us</a>
+            <a href="index.html#mission" data-i18n="nav_mission">Our Mission</a>
+            <a href="index.html#latest-events" data-i18n="nav_events"
+              >Latest Events</a
+            >
+            <a href="index.html#events-tl" data-i18n="nav_timeline"
+              >Events Timeline</a
+            >
+            <a href="statutes.html" data-i18n="nav_statutes">Statutes</a>
           </nav>
           <div class="nav-right">
-            <a href="index.html#contact" class="nav-contact-btn" data-i18n="nav_contact">Contact</a>
+            <a
+              href="index.html#contact"
+              class="nav-contact-btn"
+              data-i18n="nav_contact"
+              >Contact</a
+            >
             <div class="lang-dropdown-wrapper">
-              <button class="lang-dropdown-btn" aria-haspopup="true" aria-expanded="false">
+              <button
+                class="lang-dropdown-btn"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 <span class="lang-label">English</span>
                 <span class="chevron">▼</span>
               </button>
               <div class="lang-dropdown-menu" role="menu">
                 <button class="lang-option" data-lang="ht">Kreyòl</button>
-                <button class="lang-option active" data-lang="en">English</button>
+                <button class="lang-option active" data-lang="en">
+                  English
+                </button>
                 <button class="lang-option" data-lang="fr">Français</button>
               </div>
             </div>
@@ -341,24 +406,34 @@
             <img src="assets/logo.png" alt="UPPCH Logo" />
             <span>UPPCH</span>
           </div>
-          <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+          <button
+            class="mobile-nav-close"
+            id="mobileNavClose"
+            aria-label="Close menu"
+          >
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
         <nav class="mobile-nav-links">
-          <a href="index.html"               data-i18n="nav_home">Home</a>
-          <a href="index.html#about"         data-i18n="nav_about">About Us</a>
-          <a href="index.html#mission"       data-i18n="nav_mission">Our Mission</a>
-          <a href="index.html#latest-events" data-i18n="nav_events">Latest Events</a>
-          <a href="index.html#events-tl"     data-i18n="nav_timeline">Events Timeline</a>
-          <a href="statutes.html"            data-i18n="nav_statutes">Statutes</a>
-          <a href="index.html#contact"       data-i18n="nav_contact">Contact</a>
+          <a href="index.html" data-i18n="nav_home">Home</a>
+          <a href="index.html#about" data-i18n="nav_about">About Us</a>
+          <a href="index.html#mission" data-i18n="nav_mission">Our Mission</a>
+          <a href="index.html#latest-events" data-i18n="nav_events"
+            >Latest Events</a
+          >
+          <a href="index.html#events-tl" data-i18n="nav_timeline"
+            >Events Timeline</a
+          >
+          <a href="statutes.html" data-i18n="nav_statutes">Statutes</a>
+          <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
         </nav>
         <div class="mobile-nav-lang">
           <p class="mobile-lang-label">Language / Langue / Lang</p>
           <div class="mobile-lang-btns">
             <button class="mobile-lang-btn" data-lang="ht">Kreyòl</button>
-            <button class="mobile-lang-btn active" data-lang="en">English</button>
+            <button class="mobile-lang-btn active" data-lang="en">
+              English
+            </button>
             <button class="mobile-lang-btn" data-lang="fr">Français</button>
           </div>
         </div>
@@ -366,37 +441,62 @@
     </div>
 
     <main>
-
       <!-- ── HERO BANNER ── -->
       <div class="statutes-hero">
-        <p class="breadcrumb"><a href="index.html" data-i18n="nav_home">Akèy</a> › <span data-i18n="statutes_title">Estati &amp; Deklarasyon</span></p>
+        <p class="breadcrumb">
+          <a href="index.html" data-i18n="nav_home">Akèy</a> ›
+          <span data-i18n="statutes_title">Estati &amp; Deklarasyon</span>
+        </p>
         <h1 data-i18n="statutes_title">Estati &amp; Deklarasyon</h1>
-        <p data-i18n="statutes_subtitle">Dokiman ofisyèl ki gouvène Pati Politik UPPCH — fondasyon, prensip, ak règleman nou yo.</p>
+        <p data-i18n="statutes_subtitle">
+          Dokiman ofisyèl ki gouvène Pati Politik UPPCH — fondasyon, prensip, ak
+          règleman nou yo.
+        </p>
       </div>
 
       <!-- ── CONTENT ── -->
       <div class="statutes-body">
-
         <!-- Chapter navigation tabs -->
         <nav class="chapter-nav" id="chapterNav">
-          <button class="active" data-chapter="declaration" data-i18n="tab_declaration">Deklarasyon Prensip</button>
-          <button data-chapter="ch1" data-i18n="tab_ch1">Chapit I — Jeneral</button>
-          <button data-chapter="ch2" data-i18n="tab_ch2">Chapit II — Manm</button>
-          <button data-chapter="ch3" data-i18n="tab_ch3">Chapit III — Estrikti</button>
-          <button data-chapter="ch4" data-i18n="tab_ch4">Chapit IV — Desizyon</button>
-          <button data-chapter="ch5" data-i18n="tab_ch5">Chapit V — Finans</button>
-          <button data-chapter="ch6" data-i18n="tab_ch6">Chapit VI-IX — Dispozisyon</button>
+          <button
+            class="active"
+            data-chapter="declaration"
+            data-i18n="tab_declaration"
+          >
+            Deklarasyon Prensip
+          </button>
+          <button data-chapter="ch1" data-i18n="tab_ch1">
+            Chapit I — Jeneral
+          </button>
+          <button data-chapter="ch2" data-i18n="tab_ch2">
+            Chapit II — Manm
+          </button>
+          <button data-chapter="ch3" data-i18n="tab_ch3">
+            Chapit III — Estrikti
+          </button>
+          <button data-chapter="ch4" data-i18n="tab_ch4">
+            Chapit IV — Desizyon
+          </button>
+          <button data-chapter="ch5" data-i18n="tab_ch5">
+            Chapit V — Finans
+          </button>
+          <button data-chapter="ch6" data-i18n="tab_ch6">
+            Chapit VI-IX — Dispozisyon
+          </button>
         </nav>
 
         <!-- ═══════════════════════════════════
              PANEL 1 — Declaration of Principles
              ═══════════════════════════════════ -->
         <div class="chapter-panel active" id="panel-declaration">
-
           <div class="statute-section">
             <h2 data-i18n="decl_h1">Deklarasyon Prensip</h2>
             <div class="preamble-box" data-i18n="decl_preamble">
-              Pati Politik UPPCH te fonde an 2025 nan yon kontèks kriz miltidimansyonèl ann Ayiti. Fas ak ensтabilite politik kronik, vyolans gang, povrete andemik, ak efondman enstitisyon yo, yon gwoup Ayisyen ki viv nan peyi a ak aletranje te deside inite fòs yo pou kreye yon nouvo altènativ politik.
+              Pati Politik UPPCH te fonde an 2025 nan yon kontèks kriz
+              miltidimansyonèl ann Ayiti. Fas ak ensтabilite politik kronik,
+              vyolans gang, povrete andemik, ak efondman enstitisyon yo, yon
+              gwoup Ayisyen ki viv nan peyi a ak aletranje te deside inite fòs
+              yo pou kreye yon nouvo altènativ politik.
             </div>
           </div>
 
@@ -447,14 +547,20 @@
           <div class="statute-section">
             <h2 data-i18n="decl_mission_h">Misyon</h2>
             <div class="statute-article" data-i18n="decl_mission_text">
-              Misyon pati politik UPPCH se pwomote yon sosyete ekitab, jis ak pwospè kote chak Ayisyen ka reyalize potansyèl li. Nou angaje nou a defann dwa fondamantal tout moun, lite kont enjistis sosyal ak eksklizyon, ak etabli yon leta de dwa transparan ak responsab.
+              Misyon pati politik UPPCH se pwomote yon sosyete ekitab, jis ak
+              pwospè kote chak Ayisyen ka reyalize potansyèl li. Nou angaje nou
+              a defann dwa fondamantal tout moun, lite kont enjistis sosyal ak
+              eksklizyon, ak etabli yon leta de dwa transparan ak responsab.
             </div>
           </div>
 
           <div class="statute-section">
             <h2 data-i18n="decl_vision_h">Vizyon</h2>
             <div class="statute-article" data-i18n="decl_vision_text">
-              Konstwi yon UPPCH kote chak sitwayen gen aksè a opòtinite egal, kote jistis sosyal ak devlopman dirab nan kè politik piblik yo, ak kote demokrasi patisipativ pèmèt chak moun kontribye aktèlman nan konstwi yon nasyon ini ak pwospè.
+              Konstwi yon UPPCH kote chak sitwayen gen aksè a opòtinite egal,
+              kote jistis sosyal ak devlopman dirab nan kè politik piblik yo, ak
+              kote demokrasi patisipativ pèmèt chak moun kontribye aktèlman nan
+              konstwi yon nasyon ini ak pwospè.
             </div>
           </div>
 
@@ -465,7 +571,9 @@
               <li data-i18n="obj2">Ranfòse enstitisyon demokratik yo</li>
               <li data-i18n="obj3">Ranfòse leta de dwa</li>
               <li data-i18n="obj4">Amelyore sèvis piblik yo</li>
-              <li data-i18n="obj5">Lite kont koripsyon ak gaspiyaj resous piblik</li>
+              <li data-i18n="obj5">
+                Lite kont koripsyon ak gaspiyaj resous piblik
+              </li>
               <li data-i18n="obj6">Pwomote egalite chans ak meritokrasi</li>
               <li data-i18n="obj7">Pwomote dwa moun</li>
               <li data-i18n="obj8">Amelyore aksè a edikasyon</li>
@@ -477,7 +585,12 @@
           <div class="statute-section">
             <h2 data-i18n="decl_credo_h">Credo</h2>
             <div class="preamble-box" data-i18n="decl_credo_text">
-              Nou, kamarad Pati UPPCH, kwè nan yon avni kote chak sitwayen ayisyen viv nan diyite, egalite ak jistis sosyal. Nou kwè nan yon Ayiti souverèn, kote resous peyi a jere pou benefis kominote a, pa pou elit politik ak ekonomik koripsyon. Nou kwè nan eritaj Jean-Jacques Dessalines — modèl politik nou — ak rèv li pou yon nasyon lib, egalitè ak ini.
+              Nou, kamarad Pati UPPCH, kwè nan yon avni kote chak sitwayen
+              ayisyen viv nan diyite, egalite ak jistis sosyal. Nou kwè nan yon
+              Ayiti souverèn, kote resous peyi a jere pou benefis kominote a, pa
+              pou elit politik ak ekonomik koripsyon. Nou kwè nan eritaj
+              Jean-Jacques Dessalines — modèl politik nou — ak rèv li pou yon
+              nasyon lib, egalitè ak ini.
             </div>
           </div>
 
@@ -502,89 +615,194 @@
               </div>
             </div>
           </div>
-
-        </div><!-- /panel-declaration -->
+        </div>
+        <!-- /panel-declaration -->
 
         <!-- ═══════════════════════════════════
              PANEL 2 — Chapter I: General
              ═══════════════════════════════════ -->
         <div class="chapter-panel" id="panel-ch1">
-
           <div class="statute-section">
             <h2 data-i18n="ch1_title">Chapit I — Dispozisyon Jeneral</h2>
             <h3 data-i18n="ch1_names_h">Non ak Senbòl</h3>
-            <div class="statute-article"><strong>Atik 1</strong> — <span data-i18n="art1">Non ofisyèl pati a se: <em>Union Patriotique pour le Progrès et le Changement d'Haïti</em></span></div>
-            <div class="statute-article"><strong>Atik 2</strong> — <span data-i18n="art2">Sigla pati a se: <strong>UPPCH</strong></span></div>
-            <div class="statute-article"><strong>Atik 3</strong> — <span data-i18n="art3">Koulè pati a se ble syèl ak vèt. Ble syèl = senbòl espwa; vèt = espwa yon lòt Ayiti posib.</span></div>
-            <div class="statute-article"><strong>Atik 4</strong> — <span data-i18n="art4">Emblèm pati a se yon chandelye ki gen yon flanm nan mitan dezè a, senbòl limyè ki pral briye sou Ayiti nouvo.</span></div>
-            <div class="statute-article"><strong>Atik 5</strong> — <span data-i18n="art5">Deviz pati a se: <strong>"Jistis, Solidarite, Pwogrè"</strong></span></div>
-            <div class="statute-article"><strong>Atik 6</strong> — <span data-i18n="art6">Syèj sosyal la se nan komin #......... depatman Sant lan.</span></div>
-            <div class="statute-article"><strong>Atik 7</strong> — <span data-i18n="art7">Syèj sosyal Pati UPPCH etabli nan ………, Ayiti. Li ka transfere nenpòt kote pa desizyon kongrè nasyonal la. Pati a ka kreye biwo rejiyon, kominotè ak lokal nan diferan zòn.</span></div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 1</strong> —
+              <span data-i18n="art1"
+                >Non ofisyèl pati a se:
+                <em
+                  >Union Patriotique pour le Progrès et le Changement
+                  d'Haïti</em
+                ></span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 2</strong> —
+              <span data-i18n="art2"
+                >Sigla pati a se: <strong>UPPCH</strong></span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 3</strong> —
+              <span data-i18n="art3"
+                >Koulè pati a se ble syèl ak vèt. Ble syèl = senbòl espwa; vèt =
+                espwa yon lòt Ayiti posib.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 4</strong> —
+              <span data-i18n="art4"
+                >Emblèm pati a se yon chandelye ki gen yon flanm nan mitan dezè
+                a, senbòl limyè ki pral briye sou Ayiti nouvo.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 5</strong> —
+              <span data-i18n="art5"
+                >Deviz pati a se:
+                <strong>"Jistis, Solidarite, Pwogrè"</strong></span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 6</strong> —
+              <span data-i18n="art6"
+                >Syèj sosyal la se nan komin #......... depatman Sant lan.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 7</strong> —
+              <span data-i18n="art7"
+                >Syèj sosyal Pati UPPCH etabli nan ………, Ayiti. Li ka transfere
+                nenpòt kote pa desizyon kongrè nasyonal la. Pati a ka kreye biwo
+                rejiyon, kominotè ak lokal nan diferan zòn.</span
+              >
+            </div>
           </div>
 
           <div class="statute-section">
             <h3 data-i18n="ch1_obj_h">Objektif UPPCH (Atik 8)</h3>
             <div class="statute-article">
               <ul>
-                <li data-i18n="ch1_obj1">Pwomosyon jistis sosyal ak ekonomik</li>
-                <li data-i18n="ch1_obj2">Defans dwa moun ak libète fondamantal</li>
-                <li data-i18n="ch1_obj3">Lite kont koripsyon ak enjistis nan tout fòm li</li>
-                <li data-i18n="ch1_obj4">Pwoteksyon anviwònman an ak pwomosyon devlopman dirab</li>
-                <li data-i18n="ch1_obj5">Ankouraje patisipasyon aktif sitwayen yo nan desizyon politik ak sosyal</li>
-                <li data-i18n="ch1_obj6">Otodétèminasyon pèp la, souverènte nasyonal (politik ak ekonomik)</li>
-                <li data-i18n="ch1_obj7">Retabli demokrasi, sekirite ak defans teritwa nasyonal</li>
-                <li data-i18n="ch1_obj8">Emansipasyon yon nouvo klas sosyo-politik; eradikasyon povrete ekstrèm; meritokrasi nan administrasyon piblik yo sou tout etandi teritwa nasyonal la</li>
+                <li data-i18n="ch1_obj1">
+                  Pwomosyon jistis sosyal ak ekonomik
+                </li>
+                <li data-i18n="ch1_obj2">
+                  Defans dwa moun ak libète fondamantal
+                </li>
+                <li data-i18n="ch1_obj3">
+                  Lite kont koripsyon ak enjistis nan tout fòm li
+                </li>
+                <li data-i18n="ch1_obj4">
+                  Pwoteksyon anviwònman an ak pwomosyon devlopman dirab
+                </li>
+                <li data-i18n="ch1_obj5">
+                  Ankouraje patisipasyon aktif sitwayen yo nan desizyon politik
+                  ak sosyal
+                </li>
+                <li data-i18n="ch1_obj6">
+                  Otodétèminasyon pèp la, souverènte nasyonal (politik ak
+                  ekonomik)
+                </li>
+                <li data-i18n="ch1_obj7">
+                  Retabli demokrasi, sekirite ak defans teritwa nasyonal
+                </li>
+                <li data-i18n="ch1_obj8">
+                  Emansipasyon yon nouvo klas sosyo-politik; eradikasyon povrete
+                  ekstrèm; meritokrasi nan administrasyon piblik yo sou tout
+                  etandi teritwa nasyonal la
+                </li>
               </ul>
             </div>
           </div>
-
-        </div><!-- /panel-ch1 -->
+        </div>
+        <!-- /panel-ch1 -->
 
         <!-- ═══════════════════════════════════
              PANEL 3 — Chapter II: Members
              ═══════════════════════════════════ -->
         <div class="chapter-panel" id="panel-ch2">
-
           <div class="statute-section">
             <h2 data-i18n="ch2_title">Chapit II — Manm Pati A</h2>
 
             <h3 data-i18n="ch2_adh_h">Adhezyon</h3>
-            <div class="statute-article"><strong>Atik 9</strong> — <span data-i18n="art9">Adhezyon nan Pati UPPCH ouvè pou tout sitwayen ayisyen ki gen 18 an ak plis, ki pataje prensip ak valè pati a.</span></div>
-            <div class="statute-article"><strong>Atik 10</strong> — <span data-i18n="art10">Manm yo dwe angaje yo a respekte konstitisyon an, règleman enteryè yo, ak desizyon enstans dirijan pati a.</span></div>
-            <div class="statute-article"><strong>Atik 11</strong> — <span data-i18n="art11">Manm yo dwe angaje yo respekte konstitisyon an, règleman enteryè yo, ak desizyon enstans dirijan yo.</span></div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 9</strong> —
+              <span data-i18n="art9"
+                >Adhezyon nan Pati UPPCH ouvè pou tout sitwayen ayisyen ki gen
+                18 an ak plis, ki pataje prensip ak valè pati a.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 10</strong> —
+              <span data-i18n="art10"
+                >Manm yo dwe angaje yo a respekte konstitisyon an, règleman
+                enteryè yo, ak desizyon enstans dirijan pati a.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 11</strong> —
+              <span data-i18n="art11"
+                >Manm yo dwe angaje yo respekte konstitisyon an, règleman
+                enteryè yo, ak desizyon enstans dirijan yo.</span
+              >
+            </div>
 
             <h3 data-i18n="ch2_rights_h">Dwa Manm (Atik 12)</h3>
             <div class="statute-article">
               <ul>
                 <li data-i18n="right1">Patisipe nan aktivite ak deba pati a</li>
                 <li data-i18n="right2">Vote nan eleksyon entèn pati a</li>
-                <li data-i18n="right3">Prezante kòm kandida nan eleksyon entèn ak pòs nan pati a</li>
-                <li data-i18n="right4">Enfòme regilyèman sou desizyon ak aktivite pati a</li>
+                <li data-i18n="right3">
+                  Prezante kòm kandida nan eleksyon entèn ak pòs nan pati a
+                </li>
+                <li data-i18n="right4">
+                  Enfòme regilyèman sou desizyon ak aktivite pati a
+                </li>
               </ul>
             </div>
 
             <h3 data-i18n="ch2_duties_h">Devwa Manm (Atik 13)</h3>
             <div class="statute-article">
               <ul>
-                <li data-i18n="duty1">Respekte estati, règleman ak desizyon pati a</li>
-                <li data-i18n="duty2">Pwomote ide ak valè pati a nan tout aksyon yo</li>
-                <li data-i18n="duty3">Patisipe aktèlman nan reyinyon ak aktivite pati a òganize</li>
-                <li data-i18n="duty4">Peye kotizan yo ak satisfè obligasyon finansye anvè pati a</li>
+                <li data-i18n="duty1">
+                  Respekte estati, règleman ak desizyon pati a
+                </li>
+                <li data-i18n="duty2">
+                  Pwomote ide ak valè pati a nan tout aksyon yo
+                </li>
+                <li data-i18n="duty3">
+                  Patisipe aktèlman nan reyinyon ak aktivite pati a òganize
+                </li>
+                <li data-i18n="duty4">
+                  Peye kotizan yo ak satisfè obligasyon finansye anvè pati a
+                </li>
               </ul>
             </div>
 
             <h3 data-i18n="ch2_sanctions_h">Sanksyon Disiplinè</h3>
-            <div class="statute-article"><strong>Atik 14</strong> — <span data-i18n="art14">Nenpòt mankman grav ak prensip, valè, ak règleman pati a ka mennen sanksyon disiplinè soti nan blam rive nan eksklizyon, selon modalite ki defini nan règleman entèryè.</span></div>
-            <div class="statute-article"><strong>Atik 15</strong> — <span data-i18n="art15">Komisyon Konfli a se yon ògan esansyèl nan pati a. Wòl li se kenbe disiplin, jere konfli entèn, ak asire ke prensip ak valè pati a respekte pa tout manm yo.</span></div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 14</strong> —
+              <span data-i18n="art14"
+                >Nenpòt mankman grav ak prensip, valè, ak règleman pati a ka
+                mennen sanksyon disiplinè soti nan blam rive nan eksklizyon,
+                selon modalite ki defini nan règleman entèryè.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 15</strong> —
+              <span data-i18n="art15"
+                >Komisyon Konfli a se yon ògan esansyèl nan pati a. Wòl li se
+                kenbe disiplin, jere konfli entèn, ak asire ke prensip ak valè
+                pati a respekte pa tout manm yo.</span
+              >
+            </div>
           </div>
-
-        </div><!-- /panel-ch2 -->
+        </div>
+        <!-- /panel-ch2 -->
 
         <!-- ═══════════════════════════════════
              PANEL 4 — Chapter III: Structure
              ═══════════════════════════════════ -->
         <div class="chapter-panel" id="panel-ch3">
-
           <div class="statute-section">
             <h2 data-i18n="ch3_title">Chapit III — Estrikti Òganizasyonèl</h2>
 
@@ -612,168 +830,346 @@
             </div>
 
             <h3 data-i18n="ch3_congress_h">Kongrè Pati A (Atik 16-17)</h3>
-            <div class="statute-article" data-i18n="art16_17">Kongrè UPPCH se ògan siprèm desizyon Pati a. Li konpoze ak tout manm pati a epi li reyini tout twa an. Kongrè a responsab pou adopte oryantasyon politik, chanje konstitisyon an, ak eli manm direktwa nasyonal la.</div>
+            <div class="statute-article" data-i18n="art16_17">
+              Kongrè UPPCH se ògan siprèm desizyon Pati a. Li konpoze ak tout
+              manm pati a epi li reyini tout twa an. Kongrè a responsab pou
+              adopte oryantasyon politik, chanje konstitisyon an, ak eli manm
+              direktwa nasyonal la.
+            </div>
 
             <h3 data-i18n="ch3_cn_h">Konsèy Nasyonal — Wòl (Atik 18)</h3>
-            <div class="statute-article" data-i18n="art18">Ant de kongrè, direktwa pati a asire pa Konsèy Nasyonal li. Konsèy la egzekite tèks oryantasyon majorite kongrè a adopte, li reyini omwen yon fwa pa mwa. Li konstitye an kèk sò palman pati a, paske li se reflet dirèk reyalite sansibilite ak kouran pati a.</div>
+            <div class="statute-article" data-i18n="art18">
+              Ant de kongrè, direktwa pati a asire pa Konsèy Nasyonal li. Konsèy
+              la egzekite tèks oryantasyon majorite kongrè a adopte, li reyini
+              omwen yon fwa pa mwa. Li konstitye an kèk sò palman pati a, paske
+              li se reflet dirèk reyalite sansibilite ak kouran pati a.
+            </div>
 
-            <h3 data-i18n="ch3_cn_comp_h">Konpozisyon Konsèy Nasyonal (Atik 20)</h3>
+            <h3 data-i18n="ch3_cn_comp_h">
+              Konpozisyon Konsèy Nasyonal (Atik 20)
+            </h3>
             <div class="statute-article">
               <ul>
                 <li data-i18n="cn_a">A) Manm komite direktwa pati a (CDI)</li>
                 <li data-i18n="cn_b">B) Kòdonatè Depatmantal (CD)</li>
                 <li data-i18n="cn_c">C) Kòdonatè Kominotè (CC)</li>
                 <li data-i18n="cn_d">D) Kòdonatè Seksyon Kominotè (CSC)</li>
-                <li data-i18n="cn_e">E) Kòdonatè Entènasyonal (CI) peyi kote UPPCH gen reprezantasyon</li>
-                <li data-i18n="cn_f">F) Yon reprezantan pou chak asosyasyon eli pati a</li>
-                <li data-i18n="cn_g">G) Reprezantan òganizasyon ki gen reprezantasyon serye (omwen mwatye manm yo se manm pati a)</li>
-                <li data-i18n="cn_h">H) Prezidan/Prezidant Mouvman Jèn pou Chanjman Ayiti (MJCH)</li>
-                <li data-i18n="cn_i">I) Mouvman Fanm pou Chanjman Ayiti (MFCH)</li>
-                <li data-i18n="cn_j">+ 34 manm eli pa Kongrè Nasyonal; Majistra chèf-lye depatman yo; Palmanntè ak manm gouvènman ki manm UPPCH</li>
+                <li data-i18n="cn_e">
+                  E) Kòdonatè Entènasyonal (CI) peyi kote UPPCH gen
+                  reprezantasyon
+                </li>
+                <li data-i18n="cn_f">
+                  F) Yon reprezantan pou chak asosyasyon eli pati a
+                </li>
+                <li data-i18n="cn_g">
+                  G) Reprezantan òganizasyon ki gen reprezantasyon serye (omwen
+                  mwatye manm yo se manm pati a)
+                </li>
+                <li data-i18n="cn_h">
+                  H) Prezidan/Prezidant Mouvman Jèn pou Chanjman Ayiti (MJCH)
+                </li>
+                <li data-i18n="cn_i">
+                  I) Mouvman Fanm pou Chanjman Ayiti (MFCH)
+                </li>
+                <li data-i18n="cn_j">
+                  + 34 manm eli pa Kongrè Nasyonal; Majistra chèf-lye depatman
+                  yo; Palmanntè ak manm gouvènman ki manm UPPCH
+                </li>
               </ul>
             </div>
 
             <h3 data-i18n="ch3_dn_h">Direktwa Nasyonal (Atik 24-26)</h3>
-            <div class="statute-article" data-i18n="art24_26">Direktwa nasyonal a se ògan egzekitif pati a, responsab pou aplike desizyon Kongrè a ak jere pati a chak jou. Li konpoze ak Prezidan, Vis-Prezidan, Sekretè Jeneral, Trezorye, Konseyè, ak sekretè komisyon ak tematik yo. Manm yo eli pou yon manda twa an renouvlab; omwen 15 manm.</div>
+            <div class="statute-article" data-i18n="art24_26">
+              Direktwa nasyonal a se ògan egzekitif pati a, responsab pou aplike
+              desizyon Kongrè a ak jere pati a chak jou. Li konpoze ak Prezidan,
+              Vis-Prezidan, Sekretè Jeneral, Trezorye, Konseyè, ak sekretè
+              komisyon ak tematik yo. Manm yo eli pou yon manda twa an
+              renouvlab; omwen 15 manm.
+            </div>
           </div>
-
-        </div><!-- /panel-ch3 -->
+        </div>
+        <!-- /panel-ch3 -->
 
         <!-- ═══════════════════════════════════
              PANEL 5 — Chapter IV: Decisions
              ═══════════════════════════════════ -->
         <div class="chapter-panel" id="panel-ch4">
-
           <div class="statute-section">
-            <h2 data-i18n="ch4_title">Chapit IV — Pran Desizyon &amp; Eleksyon Entèn</h2>
+            <h2 data-i18n="ch4_title">
+              Chapit IV — Pran Desizyon &amp; Eleksyon Entèn
+            </h2>
 
             <h3 data-i18n="ch4_proc_h">Pwosedi Pran Desizyon</h3>
-            <div class="statute-article"><strong>Atik 29</strong> — <span data-i18n="art29">Desizyon yo pran pa vòt majorite senp, sof si estati a di lòt bagay.</span></div>
-            <div class="statute-article"><strong>Atik 30</strong> — <span data-i18n="art30">Desizyon enpòtan — tankou chanjman nan estati — nesesite de-tyè majorite kalifikasyon manm ki prezan yo.</span></div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 29</strong> —
+              <span data-i18n="art29"
+                >Desizyon yo pran pa vòt majorite senp, sof si estati a di lòt
+                bagay.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 30</strong> —
+              <span data-i18n="art30"
+                >Desizyon enpòtan — tankou chanjman nan estati — nesesite de-tyè
+                majorite kalifikasyon manm ki prezan yo.</span
+              >
+            </div>
 
             <h3 data-i18n="ch4_elec_h">Eleksyon Entèn</h3>
-            <div class="statute-article"><strong>Atik 31</strong> — <span data-i18n="art31">Eleksyon entèn pati a fèt tout twa an nan Kongrè Pati a.</span></div>
-            <div class="statute-article"><strong>Atik 32</strong> — <span data-i18n="art32">Tout manm ki an règ ak obligasyon yo ka prezante kòm kandida nan eleksyon entèn.</span></div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 31</strong> —
+              <span data-i18n="art31"
+                >Eleksyon entèn pati a fèt tout twa an nan Kongrè Pati a.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 32</strong> —
+              <span data-i18n="art32"
+                >Tout manm ki an règ ak obligasyon yo ka prezante kòm kandida
+                nan eleksyon entèn.</span
+              >
+            </div>
 
             <h3 data-i18n="ch4_mandate_h">Manda ak Dire (Atik 33)</h3>
-            <div class="statute-article" data-i18n="art33">Dire manda pou diferan pòs nan pati a se twa an, renouvlab.</div>
+            <div class="statute-article" data-i18n="art33">
+              Dire manda pou diferan pòs nan pati a se twa an, renouvlab.
+            </div>
           </div>
-
-        </div><!-- /panel-ch4 -->
+        </div>
+        <!-- /panel-ch4 -->
 
         <!-- ═══════════════════════════════════
              PANEL 6 — Chapter V: Finances
              ═══════════════════════════════════ -->
         <div class="chapter-panel" id="panel-ch5">
-
           <div class="statute-section">
             <h2 data-i18n="ch5_title">Chapit V — Finans Pati A</h2>
 
             <h3 data-i18n="ch5_src_h">Sous Finansman (Atik 34-35)</h3>
-            <div class="statute-article" data-i18n="art34_35">Finansman pati a soti prensipalman nan kotizan manm yo, don, sibvansyon piblik, ak aktivite kolèkt fon. Pati a angaje li a refize tout finansman ki kontredire valè ak prensip li yo.</div>
+            <div class="statute-article" data-i18n="art34_35">
+              Finansman pati a soti prensipalman nan kotizan manm yo, don,
+              sibvansyon piblik, ak aktivite kolèkt fon. Pati a angaje li a
+              refize tout finansman ki kontredire valè ak prensip li yo.
+            </div>
 
             <h3 data-i18n="ch5_mgmt_h">Jesyon Finansyè (Atik 36-37)</h3>
-            <div class="statute-article" data-i18n="art36_37">Fon pati a jere pa Trezorye a anba sipèvizyon Komite Egzekitif la. Yon transparans total egzije nan jesyon finansyè, ak rapò finansyè regilye prezante bay manm yo.</div>
+            <div class="statute-article" data-i18n="art36_37">
+              Fon pati a jere pa Trezorye a anba sipèvizyon Komite Egzekitif la.
+              Yon transparans total egzije nan jesyon finansyè, ak rapò finansyè
+              regilye prezante bay manm yo.
+            </div>
           </div>
 
           <div class="statute-section">
             <h2 data-i18n="ch6_title">Chapit VI — Revizyon Konstitisyon</h2>
-            <div class="statute-article"><strong>Atik 38</strong> — <span data-i18n="art38">Revizyon estati a ka pwopòze pa direktwa nasyonal la oswa konsèy nasyonal la, oswa pa omwen yon tyè manm pati a.</span></div>
-            <div class="statute-article"><strong>Atik 39</strong> — <span data-i18n="art39">Tout chanjman dwe apwouve pa de-tyè majorite manm ki prezan nan Kongrè Pati a.</span></div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 38</strong> —
+              <span data-i18n="art38"
+                >Revizyon estati a ka pwopòze pa direktwa nasyonal la oswa
+                konsèy nasyonal la, oswa pa omwen yon tyè manm pati a.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 39</strong> —
+              <span data-i18n="art39"
+                >Tout chanjman dwe apwouve pa de-tyè majorite manm ki prezan nan
+                Kongrè Pati a.</span
+              >
+            </div>
           </div>
-
-        </div><!-- /panel-ch5 -->
+        </div>
+        <!-- /panel-ch5 -->
 
         <!-- ═══════════════════════════════════
              PANEL 7 — Ch VI-IX: Final + Conflicts
              ═══════════════════════════════════ -->
         <div class="chapter-panel" id="panel-ch6">
-
           <div class="statute-section">
             <h2 data-i18n="ch7_title">Chapit VII — Dispozisyon Final</h2>
-            <div class="statute-article"><strong>Atik 40</strong> — <span data-i18n="art40">Estati sa yo antre anvigè depi kongrè Pati Haïti Solidaire adopte yo.</span></div>
-            <div class="statute-article"><strong>Atik 41</strong> — <span data-i18n="art41">Konsèy nasyonal a responsab entèpretasyon estati sa yo an ka dezakò oswa divèjans opinyon.</span></div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 40</strong> —
+              <span data-i18n="art40"
+                >Estati sa yo antre anvigè depi kongrè Pati Haïti Solidaire
+                adopte yo.</span
+              >
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 41</strong> —
+              <span data-i18n="art41"
+                >Konsèy nasyonal a responsab entèpretasyon estati sa yo an ka
+                dezakò oswa divèjans opinyon.</span
+              >
+            </div>
           </div>
 
           <div class="statute-section">
             <h2 data-i18n="ch8_title">Chapit VIII — Komisyon Konfli</h2>
 
             <h3 data-i18n="ch8_comp_h">Konpozisyon (Atik 42-43)</h3>
-            <div class="statute-article" data-i18n="art42_43">5 manm eli pa Kongrè Pati a pou yon manda de an renouvlab. Manm yo dwe manm pati a depi omwen yon an, rekonèt pou entegrite, enpasyalite, ak angajman yo anvè valè pati a.</div>
+            <div class="statute-article" data-i18n="art42_43">
+              5 manm eli pa Kongrè Pati a pou yon manda de an renouvlab. Manm yo
+              dwe manm pati a depi omwen yon an, rekonèt pou entegrite,
+              enpasyalite, ak angajman yo anvè valè pati a.
+            </div>
 
             <h3 data-i18n="ch8_proc_h">Pwosedi (Atik 47-50)</h3>
-            <div class="statute-article" data-i18n="art47_50">Lè yon plent depoze, Komisyon an dwe enfòme tout pati konsenan yo ak ba yo opòtinite prezante agiman ak defans yo. Ankèt yo fèt yon fason endepandan ak enpasyal. Desizyon yo pran pa majorite manm ki prezan, yo dwe ekri, motive, epi notifye pati konsenan yo. Pati yo ka fè apèl devan Konsèy Nasyonal la, ki juge an dènye enstans.</div>
+            <div class="statute-article" data-i18n="art47_50">
+              Lè yon plent depoze, Komisyon an dwe enfòme tout pati konsenan yo
+              ak ba yo opòtinite prezante agiman ak defans yo. Ankèt yo fèt yon
+              fason endepandan ak enpasyal. Desizyon yo pran pa majorite manm ki
+              prezan, yo dwe ekri, motive, epi notifye pati konsenan yo. Pati yo
+              ka fè apèl devan Konsèy Nasyonal la, ki juge an dènye enstans.
+            </div>
 
             <h3 data-i18n="ch8_sanctions_h">Sanksyon Disiplinè (Atik 51-52)</h3>
             <ul class="sanctions-list">
-              <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="sanc1">Avètisman</span></li>
-              <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="sanc2">Blam</span></li>
-              <li><i class="fa-solid fa-circle-exclamation"></i> <span data-i18n="sanc3">Sispansyon tanporè dwa manm</span></li>
-              <li><i class="fa-solid fa-circle-xmark"></i> <span data-i18n="sanc4">Eksklizyon definitif pati a</span></li>
+              <li>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span data-i18n="sanc1">Avètisman</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span data-i18n="sanc2">Blam</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span data-i18n="sanc3">Sispansyon tanporè dwa manm</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-xmark"></i>
+                <span data-i18n="sanc4">Eksklizyon definitif pati a</span>
+              </li>
             </ul>
 
-            <h3 data-i18n="ch8_ind_h">Endepandans &amp; Konfidansyalite (Atik 53-55)</h3>
-            <div class="statute-article" data-i18n="art53_55">Komisyon Konfli a egzèse fonksyon li nan tout endepandans pa rapò a lòt ògan pati a. Deliberasyon yo konfidansyèl; manm yo obligé sekrè pwofesyonèl. Komisyon an prezante yon rapò anyèl aktivite li bay konsèy nasyonal la, an respektan konfidansyalite dosye yo.</div>
+            <h3 data-i18n="ch8_ind_h">
+              Endepandans &amp; Konfidansyalite (Atik 53-55)
+            </h3>
+            <div class="statute-article" data-i18n="art53_55">
+              Komisyon Konfli a egzèse fonksyon li nan tout endepandans pa rapò
+              a lòt ògan pati a. Deliberasyon yo konfidansyèl; manm yo obligé
+              sekrè pwofesyonèl. Komisyon an prezante yon rapò anyèl aktivite li
+              bay konsèy nasyonal la, an respektan konfidansyalite dosye yo.
+            </div>
           </div>
 
           <div class="statute-section">
             <h2 data-i18n="ch9_title">Chapit IX — Prensip (Tit II)</h2>
-            <div class="statute-article" data-i18n="art56">Aksyon politik manm fondatè pati UPPCH yo enskri nan kad Manifèst pati a. Manm yo aksepte "deklarasyon prensip", estati, Manifèst, ak desizyon Pati a.</div>
-            <div class="statute-article"><strong>Atik 56</strong> — <span data-i18n="art56b">Òganizasyon ak fonksyònman Pati a enspire pa prensip sosyal-demokrasi, kritik ak oto-kritik, ak liy jis mas yo.</span></div>
+            <div class="statute-article" data-i18n="art56">
+              Aksyon politik manm fondatè pati UPPCH yo enskri nan kad Manifèst
+              pati a. Manm yo aksepte "deklarasyon prensip", estati, Manifèst,
+              ak desizyon Pati a.
+            </div>
+            <div class="statute-article">
+              <strong><span data-i18n="article_label">Atik</span> 56</strong> —
+              <span data-i18n="art56b"
+                >Òganizasyon ak fonksyònman Pati a enspire pa prensip
+                sosyal-demokrasi, kritik ak oto-kritik, ak liy jis mas yo.</span
+              >
+            </div>
           </div>
+        </div>
+        <!-- /panel-ch6 -->
 
-        </div><!-- /panel-ch6 -->
-
-        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="back_home">Retounen Paj Prensipal</span></a>
-
-      </div><!-- /statutes-body -->
+        <a href="index.html" class="back-btn"
+          ><i class="fa-solid fa-arrow-left"></i>
+          <span data-i18n="back_home">Retounen Paj Prensipal</span></a
+        >
+      </div>
+      <!-- /statutes-body -->
     </main>
 
     <!-- ── FOOTER ── -->
     <footer class="site-footer">
       <div class="site-footer-container">
         <div class="footer-column column1">
-          <div class="footer-logo"><img src="assets/logo.png" alt="UPPCH Logo" /></div>
-          <p class="footer-description" data-i18n="footer_desc">UPPCH se yon òganizasyon sosyal ak politik ki angaje nan inite kominote Ayisyen an e defann jistis, pwogrè, ak chanjman dirab.</p>
-          <p class="footer-copyright" data-i18n="footer_copyright">© 2025 UPPCH. Tout dwa rezève.</p>
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="UPPCH Logo" />
+          </div>
+          <p class="footer-description" data-i18n="footer_desc">
+            UPPCH se yon òganizasyon sosyal ak politik ki angaje nan inite
+            kominote Ayisyen an e defann jistis, pwogrè, ak chanjman dirab.
+          </p>
+          <p class="footer-copyright" data-i18n="footer_copyright">
+            © 2025 UPPCH. Tout dwa rezève.
+          </p>
         </div>
         <div class="footer-column column2">
           <h2 data-i18n="footer_quick_links">Lyen Rapid</h2>
           <ul class="footer-links">
             <li><a href="index.html" data-i18n="nav_home">Akèy</a></li>
-            <li><a href="index.html#about" data-i18n="nav_about">Ki Nou Ye</a></li>
-            <li><a href="index.html#mission" data-i18n="nav_mission">Misyon Nou</a></li>
-            <li><a href="index.html#latest-events" data-i18n="nav_events">Dènye Evènman</a></li>
-            <li><a href="index.html#contact" data-i18n="nav_contact">Kontakte Nou</a></li>
+            <li>
+              <a href="index.html#about" data-i18n="nav_about">Ki Nou Ye</a>
+            </li>
+            <li>
+              <a href="index.html#mission" data-i18n="nav_mission"
+                >Misyon Nou</a
+              >
+            </li>
+            <li>
+              <a href="index.html#latest-events" data-i18n="nav_events"
+                >Dènye Evènman</a
+              >
+            </li>
+            <li>
+              <a href="index.html#contact" data-i18n="nav_contact"
+                >Kontakte Nou</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-column column3">
           <h2 data-i18n="footer_other_pages">Lòt Paj</h2>
           <ul class="footer-links">
-            <li><a href="statutes.html" data-i18n="statutes_title">Estati &amp; Deklarasyon</a></li>
-            <li><a href="#" data-i18n="footer_privacy">Politik Konfidansyalite</a></li>
+            <li>
+              <a href="statutes.html" data-i18n="statutes_title"
+                >Estati &amp; Deklarasyon</a
+              >
+            </li>
+            <li>
+              <a href="#" data-i18n="footer_privacy">Politik Konfidansyalite</a>
+            </li>
             <li><a href="#" data-i18n="footer_terms">Tèm ak Kondisyon</a></li>
             <li><a href="#" data-i18n="footer_membership">Manm</a></li>
           </ul>
         </div>
         <div class="footer-column column4">
           <h2 data-i18n="footer_contact">Kontakte Nou</h2>
-          <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="nav_address">65 Country Club Rd, New Jersey</span></div>
-          <div class="contact-item"><i class="fa-solid fa-square-phone"></i><a href="tel:7323375065">732-337-5065</a></div>
-          <div class="contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:UppchOrg@gmail.com">UppchOrg@gmail.com</a></div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i
+            ><span data-i18n="nav_address">65 Country Club Rd, New Jersey</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-square-phone"></i
+            ><a href="tel:7323375065">732-337-5065</a>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i
+            ><a
+              href="/cdn-cgi/l/email-protection#45103535262d0a3722052228242c296b262a28"
+              ><span
+                class="__cf_email__"
+                data-cfemail="683d18180b00271a0f280f05090104460b0705"
+                >[email&#160;protected]</span
+              ></a
+            >
+          </div>
         </div>
       </div>
     </footer>
-
     <script>
       // Chapter tab switching
-      document.querySelectorAll('#chapterNav button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('#chapterNav button').forEach(b => b.classList.remove('active'));
-          document.querySelectorAll('.chapter-panel').forEach(p => p.classList.remove('active'));
-          btn.classList.add('active');
-          document.getElementById('panel-' + btn.dataset.chapter).classList.add('active');
-          window.scrollTo({ top: document.querySelector('.chapter-nav').offsetTop - 160, behavior: 'smooth' });
+      document.querySelectorAll("#chapterNav button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll("#chapterNav button")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const chapter = btn.getAttribute("data-chapter");
+          document
+            .querySelectorAll(".chapter-panel")
+            .forEach((panel) => panel.classList.remove("active"));
+          const target = document.getElementById("panel-" + chapter);
+          if (target) target.classList.add("active");
         });
       });
     </script>
